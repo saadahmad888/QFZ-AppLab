@@ -15,7 +15,7 @@
     "watch:pug": "pug -w -P ./src/templates/pages -o ./dist",
     "watch:sass": "sass --watch src/sass:dist/assets/_css ",
     "css-prefix": "postcss --replace ./dist/assets/_css/**/*.css --use autoprefixer --map",
-    "postbuild": "postcss css-prefix css-purge dist/assets/_css/*.css --use autoprefixer -r --no-map",
+    "postbuild": "postcss dist/assets/_css/*.css --use autoprefixer -r --no-map",
     "cssnano": "postcss ./dist/assets/css/app.css > ./dist/assets/css/app.min.css -s",
     "css-purge": "purgecss --css dist/assets/_css/**/*.css -o dist/assets/css --content ./dist/*.html --safelist show hover active owl-nav owl-prev owl-next collapsed collapsing modal-backdrop fade",
     "watch": "npm-run-all -r --map --parallel watch:*",
