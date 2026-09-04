@@ -1,0 +1,1291 @@
+.box-1.leave-request.p-32 
+    if page == "apply-for-leave" 
+        h2.fw-900.text-black.mb-4.form-box.fs-26 Create New Leave Requests
+        .row 
+            .col-lg.validation-issue
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Leave Type
+                        span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(value="") Select leave type
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave
+                    small.form-text.error-msg Please select leave type
+
+            .col-lg
+                .mb-4
+                    label.form-label(for="StartDate") Start Date
+                         span.text-maroon *
+                    .form-box
+                        input.StartDate.form-control(type="text" placeholder="Select date").leave-box-1
+                        button.calendar-btn-startdate(type="button")
+                            i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                    small.form-text.error-msg Select your leave end date.
+                        
+            .col-lg
+                .mb-4
+                    label.form-label(for="EndDate") End Date
+                        span.text-maroon *
+                    .form-box
+                        input.EndDate.form-control(type="text" placeholder="Select date").leave-box-1
+                        button.calendar-btn-enddate(type="button")
+                            i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                        small.form-text.error-msg Select your leave end date.
+
+        .row 
+            .col-lg-4
+                .mb-4.form-box
+                    .heading-label Leave Balances
+                    .input-saved.leave-box-2 3 days
+                    //- small.form-text.error-msg Check your remaining leave days.
+
+            .col-lg
+                .mb-4.form-box
+                    .heading-label Total Days
+                    .input-saved.leave-box-2 3 days
+                    //- small.form-text.error-msg Automatically calculated based on dates.
+                        
+            .col-lg.validation-issue
+                .mb-4.form-box
+                    label.form-label(for="DelegatorName") Delegator Name
+                        span.text-maroon *
+                    input#DelegatorName.form-control(type="text" placeholder="Enter delegator name").leave-box-1
+                    small.form-text.error-msg Enter Delegators Name.
+
+        .row 
+            .col-lg
+                .mb-4.form-box
+                    .heading-label Delegator ID
+                    .input-saved.leave-box-2 111111
+                //- .mb-4.form-box
+                    label.form-label(for="DelegatorID") Delegator ID
+                    input#DelegatorID.form-control(type="number" placeholder="QFZA-0195").leave-box-2
+                    //- small.form-text.error-msg Your delegator’s employee ID.
+
+            .col-lg
+                .mb-4.form-box
+                    label.form-label(for="ContactNumber") Contact Number
+                    input#ContactNumber.form-control(type="tel" placeholder="Enter Contact Number" pattern="[0-9]{10,15}").leave-box-1
+                    //- small.form-text.error-msg Please provide a valid phone number.
+                        
+            .col-lg
+                .mb-4.form-box
+                    label.form-label(for="AddressOnLeave") Address While on Leave
+                    textarea#AddressOnLeave.form-control(rows="1" placeholder="Enter address while on leave").leave-box-1
+                    //- small.form-text.error-msg Where you can be reached during leave.
+
+        .row
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="Attachment") Attachment
+                    .choose-attachment.position-relative.w-100
+                        i.d-inline-flex(style="background-image:url(assets/images/upload-btn.svg);width:100px;height:100px;")
+                        input#Attachment(type="file" accept=".pdf,.jpg,.png" )
+                        p.upload-text
+                            | Drag & Drop  or 
+                            span.upload-btn.text-blue Upload
+            .col-lg-8
+                .mb-4.form-box
+                    label.form-label(for="Reason") Reason for Leave 
+                        span.text-maroon *
+                    textarea#Reason.form-control(rows="10" placeholder="Enter reason for leave" required).leave-box-3
+                    //- small.form-text.error-msg Required field — please explain your reason.
+        .text-end            
+            button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Submit Request
+
+    if page == "update-leave" 
+        h2.fw-900.text-black.mb-4.form-box.fs-26 Create New Leave Requests
+        .row 
+            .col-lg.validation-issue
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Leave Type
+                        span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(value="") Select leave type
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave
+                    small.form-text.error-msg Please select leave type
+
+            .col-lg
+                .mb-4
+                    label.form-label(for="StartDate") Start Date
+                         span.text-maroon *
+                    .form-box
+                        input.StartDate.form-control(type="text" placeholder="Select date").leave-box-1
+                        button.calendar-btn-startdate(type="button")
+                            i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                    small.form-text.error-msg Select your leave end date.
+                        
+            .col-lg
+                .mb-4
+                    label.form-label(for="EndDate") End Date
+                        span.text-maroon *
+                    .form-box
+                        input.EndDate.form-control(type="text" placeholder="Select date").leave-box-1
+                        button.calendar-btn-enddate(type="button")
+                            i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                        small.form-text.error-msg Select your leave end date.
+
+        .row 
+            .col-lg-4
+                .mb-4.form-box
+                    .heading-label Leave Balances
+                    .input-saved.leave-box-2 3 days
+                    //- small.form-text.error-msg Check your remaining leave days.
+
+            .col-lg
+                .mb-4.form-box
+                    .heading-label Total Days
+                    .input-saved.leave-box-2 3 days
+                    //- small.form-text.error-msg Automatically calculated based on dates.
+                        
+            .col-lg.validation-issue
+                .mb-4.form-box
+                    label.form-label(for="DelegatorName") Delegator Name
+                        span.text-maroon *
+                    input#DelegatorName.form-control(type="text" placeholder="Enter delegator name").leave-box-1
+                    small.form-text.error-msg Enter Delegators Name.
+
+        .row 
+            .col-lg
+                .mb-4.form-box
+                    .heading-label Delegator ID
+                    .input-saved.leave-box-2 111111
+                //- .mb-4.form-box
+                    label.form-label(for="DelegatorID") Delegator ID
+                    input#DelegatorID.form-control(type="number" placeholder="QFZA-0195").leave-box-2
+                    //- small.form-text.error-msg Your delegator’s employee ID.
+
+            .col-lg
+                .mb-4.form-box
+                    label.form-label(for="ContactNumber") Contact Number
+                    input#ContactNumber.form-control(type="tel" placeholder="Enter Contact Number" pattern="[0-9]{10,15}").leave-box-1
+                    //- small.form-text.error-msg Please provide a valid phone number.
+                        
+            .col-lg
+                .mb-4.form-box
+                    label.form-label(for="AddressOnLeave") Address While on Leave
+                    textarea#AddressOnLeave.form-control(rows="1" placeholder="Enter address while on leave").leave-box-1
+                    //- small.form-text.error-msg Where you can be reached during leave.
+
+        .row
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="Attachment") Attachment
+                    .choose-attachment.position-relative.w-100
+                        i.d-inline-flex(style="background-image:url(assets/images/upload-btn.svg);width:100px;height:100px;")
+                        input#Attachment(type="file" accept=".pdf,.jpg,.png" )
+                        p.upload-text
+                            | Drag & Drop  or 
+                            span.upload-btn.text-blue Upload
+            .col-lg-8
+                .mb-4.form-box
+                    label.form-label(for="Reason") Reason for Leave 
+                        span.text-maroon *
+                    textarea#Reason.form-control(rows="10" placeholder="Enter reason for leave" required).leave-box-3
+                    //- small.form-text.error-msg Required field — please explain your reason.
+        .row.services-details-section.mb-4    
+            .col-lg-12 
+                .box.p-24 
+                    .heading-sub.fs-18 Attachment 
+                    .attachments
+                        .file
+                            span.icon.file
+                            span.filename.fs-14 Document.pdf
+                            span.icon.view
+                            button.border-0.bg-transparent.text-blue Download
+                            button.border-0.bg-transparent.text-maroon Delete
+                        .separator 
+                        .file
+                            span.icon.file
+                            span.filename.fs-14 Document.pdf
+                            span.icon.view
+                            button.border-0.bg-transparent.text-blue Download
+                            button.border-0.bg-transparent.text-maroon Delete
+                        .separator 
+                        .file
+                            span.icon.file
+                            span.filename.fs-14 Document.pdf
+                            span.icon.view
+                            button.border-0.bg-transparent.text-blue Download
+                            button.border-0.bg-transparent.text-maroon Delete
+        .text-end            
+            button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Submit Request
+
+    if page == "hr-letter-request" 
+        h2.fw-900.text-black.mb-4.form-box.fs-26 Create New HR Letter Request
+        .row 
+            .col-lg-4
+                .mb-4 
+                    .heading-label Letter Type 
+                    .input-saved.leave-box-2 Official
+                //- .mb-4.form-box
+                    label.form-label(for="LeaveType") Letter Type
+                        span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(value="") Select leave type
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave
+                    //- small.form-text.error-msg Please select leave type
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Language
+                        span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Language")
+                        option(value="") Select leave type
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave
+                    //- small.form-text.error-msg Please select leave type
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Report Type
+                        span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Recipient Category")
+                        option(value="") Select leave type
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave
+                    //- small.form-text.error-msg Please select leave type
+
+        .row 
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Letter Certificate Group 
+                        span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Recipient Category")
+                        option(value="") Select Letter Certificate Group
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Letter Certificate Code 
+                        //- span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Recipient Category")
+                        option(value="") Select Letter Certificate Code
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave         
+
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="AddressOnLeave") Address To
+                        span.text-maroon *
+                    textarea#AddressOnLeave.form-control(rows="1" placeholder="Enter Address To").leave-box-1
+                    //- small.form-text.error-msg Where you can be reached during leave.
+        .row 
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="AddressOnLeave") Arabic Addressed To 
+                        span.text-maroon *
+                    textarea#AddressOnLeave.form-control(rows="1" placeholder="Enter Arabic Address To").leave-box-1
+                    //- small.form-text.error-msg Where you can be reached during leave.
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="AddressOnLeave") Address
+                        span.text-maroon *
+                    textarea#AddressOnLeave.form-control(rows="1" placeholder="Enter Address").leave-box-1
+                    //- small.form-text.error-msg Where you can be reached during leave.
+        .row
+            
+            .col-lg-12
+                .mb-4.form-box
+                    label.form-label(for="Reason") Description
+                        span.text-maroon *
+                    textarea#Reason.form-control(rows="5" placeholder="Enter Description" required)
+                    //- small.form-text.error-msg Required field — please explain your reason.
+        .text-end
+            button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Submit Request
+    if page == "create-performance-evaluation-form" 
+        .row 
+            .col-lg
+                h2.fw-900.text-black.mb-4.form-box.fs-26 Create New Performance Evaluation Form
+            .col-lg-auto
+                .input-saved.leave-box-2 2026
+        .box-7.p-32.mb-4
+            .row 
+                .col-lg-4
+                    .mb-4 
+                        .heading-label Full Name  
+                            //- span.text-maroon *
+                        .input-saved.leave-box-2.text-black-70 Ahmed bin Saleh
+                .col-lg-4
+                    .mb-4
+                        .heading-label Employee ID  
+                            //- span.text-maroon *
+                        .input-saved.leave-box-2.text-black-70 EM-002
+                .col-lg-4
+                    .mb-4
+                        .heading-label Position
+                            //- span.text-maroon *
+                        .input-saved.leave-box-2.text-black-70 Officer
+
+            .row 
+                .col-lg-4
+                    .mb-4
+                        .heading-label Date of Joining 
+                            //- span.text-maroon *
+                        .input-saved.leave-box-2.text-black-70 23/05/2025
+                .col-lg-4
+                    .mb-4
+                        .heading-label Department 
+                            //- span.text-maroon *
+                        .input-saved.leave-box-2.text-black-70 Information Technology
+            
+
+                .col-lg-4
+                    .mb-4
+                        .heading-label Duration in the Job 
+                            //- span.text-maroon *
+                        .input-saved.leave-box-2.text-black-70 6 Months
+            .row 
+                .col-lg-4
+                    .mb-4
+                        .heading-label Department Head  
+                            //- span.text-maroon *
+                        .input-saved.leave-box-2.text-black-70 Yasmine Al-Najjar
+                .col-lg-4
+                    .mb-4
+                        .heading-label Sector Head  
+                            //- span.text-maroon *
+                        .input-saved.leave-box-2.text-black-70 Samira Al-Kuwari
+        
+
+        .row.mb-4
+            .col-lg-12.d-flex.justify-content-end
+                ul.nav.nav-pills#objective-review-tab(role="tablist").tab-segment
+                    li.nav-item(role="presentation")
+                        a.nav-link.active#objectives-review-tab(data-bs-toggle="tab" data-bs-target="#objectives-review" type="button" role="tab" aria-controls="objectives-review" aria-selected="true") 
+                           .fs-16 Objectives Review
+                    li.nav-item(role="presentation")
+                        a.nav-link#h1-tab.disabled(data-bs-toggle="tab" data-bs-target="#h1" type="button" role="tab" aria-controls="h1" aria-selected="false" aria-disabled="true")
+                           .fs-16 H1 Review
+                    li.nav-item(role="presentation")
+                        a.nav-link#h2-tab.disabled(data-bs-toggle="tab" data-bs-target="#h2" type="button" role="tab" aria-controls="h2" aria-selected="false" aria-disabled="true")
+                           .fs-16 H2 Review
+        .tab-content
+            #objectives-review.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="objectives-review-tab")
+                .objectives-wrap
+                    .box-7.p-32.mb-4.regular-objectives  
+                        .row 
+                            .col-lg
+                                h3.fs-20.text-black.fw-900 Regular Objectives
+                            .col-auto 
+                                button.btn-add(type="button")
+                                    i
+
+                        .regular-objectives-container
+                            .row.regular-objective-row
+                                .col-lg-11
+                                    .row
+                                        .col-lg-3
+                                            .mb-4.form-box
+                                                label.form-label(for="DelegatorName") Objective
+                                                    span.text-maroon *
+                                                input.form-control(type="text" placeholder="Enter Objective").leave-box-1
+                                                small.form-text.error-msg Enter Delegators Name.
+                                        
+                                        .col-lg-3
+                                            .mb-4
+                                                label.form-label(for="StartDate") Start Date
+                                                    span.text-maroon *
+                                                .form-box
+                                                    input.StartDate.form-control(type="text" placeholder="Select date").leave-box-1
+                                                    button.calendar-btn-startdate(type="button")
+                                                        i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                                                small.form-text.error-msg Select your leave end date.
+                                        
+                                                    
+                                        .col-lg-3
+                                            .mb-4
+                                                label.form-label(for="EndDate") End Date
+                                                    span.text-maroon *
+                                                .form-box
+                                                    input.EndDate.form-control(type="text" placeholder="Select date").leave-box-1
+                                                    button.calendar-btn-enddate(type="button")
+                                                        i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                                                    small.form-text.error-msg Select your leave end date.   
+
+                                        .col-lg-3.validation-issue
+                                            .mb-4.form-box
+                                                label.form-label(for="LeaveType") Status
+                                                    span.text-maroon *
+                                                select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                                                    option(value="") Select leave type
+                                                    option(value="casual") Casual Leave
+                                                    option(value="sick") Sick Leave
+                                                    option(value="earned") Earned Leave
+                                                    option(value="unpaid") Unpaid Leave
+                                                small.form-text.error-msg Please select leave type
+                                .col-lg-1
+                                    .mb-4.form-box
+                                        label.form-label &nbsp;
+                                        .d-flex.justify-content-end
+                                            button.btn-delete-small(type="button")
+                                                i.delete
+                        
+                                                    
+                    .box-7.p-32.mb-4.strategic-objectives  
+                        .row 
+                            .col-lg
+                                h3.fs-20.text-black.fw-900 Strategic Objectives
+                            .col-auto 
+                                button.btn-add(type="button")
+                                    i
+
+                        .strategic-objectives-container
+                            .row.strategic-objective-row
+                                .col-lg-11
+                                    .row
+                                        .col-lg-3
+                                            .mb-4.form-box
+                                                label.form-label(for="DelegatorName") Objective
+                                                    span.text-maroon *
+                                                input.form-control(type="text" placeholder="Enter Objective").leave-box-1
+                                                small.form-text.error-msg Enter Delegators Name.
+                                        
+                                        .col-lg-3
+                                            .mb-4
+                                                label.form-label(for="StartDate") Start Date
+                                                    span.text-maroon *
+                                                .form-box
+                                                    input.StartDate.form-control(type="text" placeholder="Select date").leave-box-1
+                                                    button.calendar-btn-startdate(type="button")
+                                                        i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                                                small.form-text.error-msg Select your leave end date.
+                                        
+                                                    
+                                        .col-lg-3
+                                            .mb-4
+                                                label.form-label(for="EndDate") End Date
+                                                    span.text-maroon *
+                                                .form-box
+                                                    input.EndDate.form-control(type="text" placeholder="Select date").leave-box-1
+                                                    button.calendar-btn-enddate(type="button")
+                                                        i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                                                    small.form-text.error-msg Select your leave end date.   
+
+                                        .col-lg-3.validation-issue
+                                            .mb-4.form-box
+                                                label.form-label(for="LeaveType") Status
+                                                    span.text-maroon *
+                                                select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                                                    option(value="") Select leave type
+                                                    option(value="casual") Casual Leave
+                                                    option(value="sick") Sick Leave
+                                                    option(value="earned") Earned Leave
+                                                    option(value="unpaid") Unpaid Leave
+                                                small.form-text.error-msg Please select leave type
+                                .col-lg-1
+                                    .mb-4.form-box
+                                        label.form-label &nbsp;
+                                        .d-flex.justify-content-end
+                                            button.btn-delete-small(type="button")
+                                                i.delete
+            #h1.tab-pane.fade(role="tabpanel" aria-labelledby="h1-tab")
+                // Content for Objectives tab (currently disabled)
+            #h2.tab-pane.fade(role="tabpanel" aria-labelledby="h2-tab")
+                // Content for Strategic Objectives tab (currently disabled)
+        .text-end 
+            button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Submit 
+             
+    if page == "schooling-allowances-request" 
+        .d-flex.justify-content-between.align-items-center.mb-4.flex-wrap 
+            h2.fw-900.text-black.form-box.fs-26 Create New Schooling Allowance Request
+            .d-flex.gap-4.flex-wrap 
+                .form-box.ctm-width
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Academic Year")
+                        option(value="") Select
+                        option(value="2026") 2026
+                        option(value="2025") 2025
+                        option(value="2024") 2024
+                        option(value="2023") 2023
+                button#addDependent.btn.d-flex.align-items-center.comment-btn.fs-16(type="button") Add New Dependent
+        #dependentWrapper
+            .dependent-block.box-7.p-32
+                .dependent-header.d-flex.justify-content-between
+                    h3.fs-20.text-black.fw-900 Dependent 1 - Information
+                    .d-flex.gap-5
+                        button.btn-delete
+                            i.delete 
+                            | Delete
+                        button.toggle-arrow(type="button")
+                            i.arrow-icon
+                .dependent-body
+                    .row 
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="LeaveType") Academic Year 
+                                    span.text-maroon *
+                                select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Year")
+                                    option(value="") Select leave type
+                                    option(value="casual") Casual Leave
+                                    option(value="sick") Sick Leave
+                                    option(value="earned") Earned Leave
+                                    option(value="unpaid") Unpaid Leave
+                                //- small.form-text.error-msg Please select leave type
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="LeaveType") Dependent’s Name 
+                                    span.text-maroon *
+                                select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Dependent")
+                                    option(value="") Select leave type
+                                    option(value="casual") Casual Leave
+                                    option(value="sick") Sick Leave
+                                    option(value="earned") Earned Leave
+                                    option(value="unpaid") Unpaid Leave
+                                //- small.form-text.error-msg Please select leave type
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="DelegatorName") School Name
+                                    span.text-maroon *
+                                input#DelegatorName.form-control(type="text" placeholder="Enter School Name").leave-box-1
+                                //- small.form-text.error-msg Enter Delegators Name.
+                    .row 
+                                    
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="DelegatorName") Class Number
+                                    span.text-maroon *
+                                input#DelegatorName.form-control(type="text" placeholder="Enter Class Number").leave-box-1
+                                //- small.form-text.error-msg Enter Delegators Name.
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="LeaveType") Semesters  
+                                    span.text-maroon *
+                                select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Dependent")
+                                    option(value="") Select leave type
+                                    option(value="casual") Casual Leave
+                                    option(value="sick") Sick Leave
+                                    option(value="earned") Earned Leave
+                                    option(value="unpaid") Unpaid Leave
+                                //- small.form-text.error-msg Please select leave type
+                        
+                        .col-lg
+                            .mb-4.form-box
+                                .heading-label Derserved Amount
+                                .input-saved.leave-box-2 QAR 300
+                                //- label.form-label(for="AddressOnLeave") Deserved Amount 
+                                //- textarea#AddressOnLeave.form-control(rows="1" placeholder="300 QAR").leave-box-2
+                                //- small.form-text.error-msg Where you can be reached during leave.
+                    .row 
+                                    
+                        .col-lg
+                            .mb-4.form-box
+                                .heading-label Paid Amout
+                                .input-saved.leave-box-2 QAR 300
+                                //- label.form-label(for="DelegatorName") Paid Amount Deserved
+                                //-     //- span.text-maroon *
+                                //- input#DelegatorName.form-control(type="text" placeholder="300 QAR").leave-box-2
+                                //- small.form-text.error-msg Enter Delegators Name.
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="LeaveType") Invoice/ Receipt Amount 
+                                    //- span.text-maroon *
+                                select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Dependent")
+                                    option(value="") Select leave type
+                                    option(value="casual") Casual Leave
+                                    option(value="sick") Sick Leave
+                                    option(value="earned") Earned Leave
+                                    option(value="unpaid") Unpaid Leave
+                                //- small.form-text.error-msg Please select leave type
+                        
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="AddressOnLeave") School Name 
+                                    span.text-maroon *
+                                textarea#AddressOnLeave.form-control(rows="1" placeholder="Enter School Name").leave-box-1
+                                //- small.form-text.error-msg Where you can be reached during leave.
+                        
+
+                    .row
+                        .col-lg-12
+                            .mb-4.form-box
+                                label.form-label(for="Attachment") Attachment
+                                .choose-attachment.position-relative.w-100
+                                    i.d-inline-flex(style="background-image:url(assets/images/upload-btn.svg);width:100px;height:100px;")
+                                    input#Attachment(type="file" accept=".pdf,.jpg,.png" )
+                                    p.upload-text
+                                        | Drag & Drop  or 
+                                        span.upload-btn.text-blue Upload
+            button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Save & Next
+    if page == "schooling-allowances-update" 
+        .d-flex.justify-content-between.align-items-center.mb-4.flex-wrap 
+            h2.fw-900.text-black.form-box.fs-26 Update New Schooling Allowance Request
+            .d-flex.gap-4.flex-wrap 
+                .form-box.ctm-width
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Academic Year")
+                        option(value="") Select
+                        option(value="2026") 2026
+                        option(value="2025") 2025
+                        option(value="2024") 2024
+                        option(value="2023") 2023
+                button#addDependent.btn.d-flex.align-items-center.comment-btn.fs-16(type="button") Add New Dependent
+        #dependentWrapper
+            .dependent-block.box-7.p-32
+                .dependent-header.d-flex.justify-content-between
+                    h3.fs-20.text-black.fw-900 Dependent 1 - Information
+                    .d-flex.gap-5
+                        button.btn-delete
+                            i.delete 
+                            | Delete
+                        button.toggle-arrow(type="button")
+                            i.arrow-icon
+                .dependent-body
+                    .row 
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="LeaveType") Academic Year 
+                                    span.text-maroon *
+                                select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Year")
+                                    option(value="") Select leave type
+                                    option(value="casual") Casual Leave
+                                    option(value="sick") Sick Leave
+                                    option(value="earned") Earned Leave
+                                    option(value="unpaid") Unpaid Leave
+                                //- small.form-text.error-msg Please select leave type
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="LeaveType") Dependent’s Name 
+                                    span.text-maroon *
+                                select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Dependent")
+                                    option(value="") Select leave type
+                                    option(value="casual") Casual Leave
+                                    option(value="sick") Sick Leave
+                                    option(value="earned") Earned Leave
+                                    option(value="unpaid") Unpaid Leave
+                                //- small.form-text.error-msg Please select leave type
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="DelegatorName") School Name
+                                    span.text-maroon *
+                                input#DelegatorName.form-control(type="text" placeholder="Enter School Name").leave-box-1
+                                //- small.form-text.error-msg Enter Delegators Name.
+                    .row 
+                                    
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="DelegatorName") Class Number
+                                    span.text-maroon *
+                                input#DelegatorName.form-control(type="text" placeholder="Enter Class Number").leave-box-1
+                                //- small.form-text.error-msg Enter Delegators Name.
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="LeaveType") Semesters  
+                                    span.text-maroon *
+                                select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Dependent")
+                                    option(value="") Select leave type
+                                    option(value="casual") Casual Leave
+                                    option(value="sick") Sick Leave
+                                    option(value="earned") Earned Leave
+                                    option(value="unpaid") Unpaid Leave
+                                //- small.form-text.error-msg Please select leave type
+                        
+                        .col-lg
+                            .mb-4.form-box
+                                .heading-label Derserved Amount
+                                .input-saved.leave-box-2 QAR 300
+                                //- label.form-label(for="AddressOnLeave") Deserved Amount 
+                                //- textarea#AddressOnLeave.form-control(rows="1" placeholder="300 QAR").leave-box-2
+                                //- small.form-text.error-msg Where you can be reached during leave.
+                    .row 
+                                    
+                        .col-lg
+                            .mb-4.form-box
+                                .heading-label Paid Amout
+                                .input-saved.leave-box-2 QAR 300
+                                //- label.form-label(for="DelegatorName") Paid Amount Deserved
+                                //-     //- span.text-maroon *
+                                //- input#DelegatorName.form-control(type="text" placeholder="300 QAR").leave-box-2
+                                //- small.form-text.error-msg Enter Delegators Name.
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="LeaveType") Invoice/ Receipt Amount 
+                                    //- span.text-maroon *
+                                select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Dependent")
+                                    option(value="") Select leave type
+                                    option(value="casual") Casual Leave
+                                    option(value="sick") Sick Leave
+                                    option(value="earned") Earned Leave
+                                    option(value="unpaid") Unpaid Leave
+                                //- small.form-text.error-msg Please select leave type
+                        
+                        .col-lg
+                            .mb-4.form-box
+                                label.form-label(for="AddressOnLeave") School Name 
+                                    span.text-maroon *
+                                textarea#AddressOnLeave.form-control(rows="1" placeholder="Enter School Name").leave-box-1
+                                //- small.form-text.error-msg Where you can be reached during leave.
+                        
+
+                    .row
+                        .col-lg-12
+                            .mb-4.form-box
+                                label.form-label(for="Attachment") Attachment
+                                .choose-attachment.position-relative.w-100
+                                    i.d-inline-flex(style="background-image:url(assets/images/upload-btn.svg);width:100px;height:100px;")
+                                    input#Attachment(type="file" accept=".pdf,.jpg,.png" )
+                                    p.upload-text
+                                        | Drag & Drop  or 
+                                        span.upload-btn.text-blue Upload
+                    .row.services-details-section.mb-4    
+                        .col-lg-12 
+                            .box.p-24 
+                                .heading-sub.fs-18 Attachment 
+                                .attachments
+                                    .file
+                                        span.icon.file
+                                        span.filename.fs-14 Document.pdf
+                                        span.icon.view
+                                        button.border-0.bg-transparent.text-blue Download
+                                        button.border-0.bg-transparent.text-maroon Delete
+                                    .separator 
+                                    .file
+                                        span.icon.file
+                                        span.filename.fs-14 Document.pdf
+                                        span.icon.view
+                                        button.border-0.bg-transparent.text-blue Download
+                                        button.border-0.bg-transparent.text-maroon Delete
+                                    .separator 
+                                    .file
+                                        span.icon.file
+                                        span.filename.fs-14 Document.pdf
+                                        span.icon.view
+                                        button.border-0.bg-transparent.text-blue Download
+                                        button.border-0.bg-transparent.text-maroon Delete
+                    
+            button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Save & Next
+  
+    //- if page == "schooling-allowances-request" 
+        .d-flex.justify-content-between.align-items-center.mb-4 
+            h2.fw-900.text-black.form-box.fs-26 Create New Schooling Allowance Request
+            button.btn.d-flex.align-items-center.comment-btn(href="#").fs-16 Add New Dependent
+        .box-7.p-32
+            h3.fs-20.text-black.fw-900.mb-24 Dependent 1 - Information
+            .row 
+                .col-lg
+                    .mb-4.form-box
+                        label.form-label(for="LeaveType") Academic Year 
+                            span.text-maroon *
+                        select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Year")
+                            option(value="") Select leave type
+                            option(value="casual") Casual Leave
+                            option(value="sick") Sick Leave
+                            option(value="earned") Earned Leave
+                            option(value="unpaid") Unpaid Leave
+                        //- small.form-text.error-msg Please select leave type
+                .col-lg
+                    .mb-4.form-box
+                        label.form-label(for="LeaveType") Dependent’s Name 
+                            span.text-maroon *
+                        select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Dependent")
+                            option(value="") Select leave type
+                            option(value="casual") Casual Leave
+                            option(value="sick") Sick Leave
+                            option(value="earned") Earned Leave
+                            option(value="unpaid") Unpaid Leave
+                        //- small.form-text.error-msg Please select leave type
+                .col-lg
+                    .mb-4.form-box
+                        label.form-label(for="DelegatorName") School Name
+                            span.text-maroon *
+                        input#DelegatorName.form-control(type="text" placeholder="Enter School Name").leave-box-1
+                        //- small.form-text.error-msg Enter Delegators Name.
+            .row 
+                            
+                .col-lg
+                    .mb-4.form-box
+                        label.form-label(for="DelegatorName") Class Number
+                            span.text-maroon *
+                        input#DelegatorName.form-control(type="text" placeholder="Enter Class Number").leave-box-1
+                        //- small.form-text.error-msg Enter Delegators Name.
+                .col-lg
+                    .mb-4.form-box
+                        label.form-label(for="LeaveType") Semesters  
+                            span.text-maroon *
+                        select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Dependent")
+                            option(value="") Select leave type
+                            option(value="casual") Casual Leave
+                            option(value="sick") Sick Leave
+                            option(value="earned") Earned Leave
+                            option(value="unpaid") Unpaid Leave
+                        //- small.form-text.error-msg Please select leave type
+                
+                .col-lg
+                    .mb-4.form-box
+                        .heading-label Derserved Amount
+                        .input-saved.leave-box-2 QAR 300
+                        //- label.form-label(for="AddressOnLeave") Deserved Amount 
+                        //- textarea#AddressOnLeave.form-control(rows="1" placeholder="300 QAR").leave-box-2
+                        //- small.form-text.error-msg Where you can be reached during leave.
+            .row 
+                            
+                .col-lg
+                    .mb-4.form-box
+                        .heading-label Paid Amout
+                        .input-saved.leave-box-2 QAR 300
+                        //- label.form-label(for="DelegatorName") Paid Amount Deserved
+                        //-     //- span.text-maroon *
+                        //- input#DelegatorName.form-control(type="text" placeholder="300 QAR").leave-box-2
+                        //- small.form-text.error-msg Enter Delegators Name.
+                .col-lg
+                    .mb-4.form-box
+                        label.form-label(for="LeaveType") Invoice/ Receipt Amount 
+                            //- span.text-maroon *
+                        select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Dependent")
+                            option(value="") Select leave type
+                            option(value="casual") Casual Leave
+                            option(value="sick") Sick Leave
+                            option(value="earned") Earned Leave
+                            option(value="unpaid") Unpaid Leave
+                        //- small.form-text.error-msg Please select leave type
+                
+                .col-lg
+                    .mb-4.form-box
+                        label.form-label(for="AddressOnLeave") School Name 
+                            span.text-maroon *
+                        textarea#AddressOnLeave.form-control(rows="1" placeholder="Enter School Name").leave-box-1
+                        //- small.form-text.error-msg Where you can be reached during leave.
+                
+
+            .row
+                .col-lg-12
+                    .mb-4.form-box
+                        label.form-label(for="Attachment") Attachment
+                        .choose-attachment.position-relative.w-100
+                            i.d-inline-flex(style="background-image:url(assets/images/upload-btn.svg);width:100px;height:100px;")
+                            input#Attachment(type="file" accept=".pdf,.jpg,.png" )
+                            p.upload-text
+                                | Drag & Drop  or 
+                                span.upload-btn.text-blue Upload
+            .text-end                    
+                button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Submit Request
+  
+   
+    if page == "permission-request-request" 
+        h2.fw-900.text-black.mb-4.form-box.fs-26 Create New Permission Request
+        .row 
+            //- .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Permission Type 
+                        span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(value="") Select leave type
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave
+                    //- small.form-text.error-msg Please select leave type
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Violation Type 
+                        span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(value="") Select leave type
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave
+                    //- small.form-text.error-msg Please select leave type
+            .col-lg-4
+                .mb-4.form-box
+                    .heading-label Permission Type
+                    .input-saved.leave-box-2 -
+                    //- label.form-label(for="DelegatorName") Permission Balance
+                    //-     span.text-maroon *
+                    //- input#DelegatorName.form-control(type="text" placeholder="06 Hours").leave-box-2
+                    //- small.form-text.error-msg Enter Delegators Name.
+            .col-lg-4
+                .mb-4.form-box.position-relative
+                    .heading-label Date
+                    .input-saved.leave-box-2 -
+                        i.calendar-icon.d-inline-flex.bg-grey2(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;width: 25px;height: 25px;inset-inline-end: 10px;position: absolute;")
+        .row 
+            .col-lg-4
+                .mb-4.form-box.position-relative
+                    .heading-label Start Time
+                    .input-saved.leave-box-2 -
+                        i.calendar-icon.d-inline-flex.bg-grey2(style="-webkit-mask: url('assets/images/clock.svg') no-repeat center;width: 25px;height: 25px;inset-inline-end: 10px;position: absolute;")
+            //- .col-lg-4            
+                .mb-4
+                    label.form-label(for="StartDate") Start Date
+                        span.text-maroon *
+                    .form-box
+                        input.StartDate.form-control(type="text" placeholder="Select date").leave-box-1
+                        button.calendar-btn-startdate(type="button")
+                            i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                            //-small.form-text.error-msg Select your leave end date.
+            .col-lg-4 
+                .mb-4.form-box.position-relative
+                    .heading-label End Time
+                    .input-saved.leave-box-2 -
+                        i.calendar-icon.d-inline-flex.bg-grey2(style="-webkit-mask: url('assets/images/clock.svg') no-repeat center;width: 25px;height: 25px;inset-inline-end: 10px;position: absolute;")
+                //- .mb-4
+                    label.form-label(for="StartTime") Start Time
+                        span.text-maroon *
+                    .form-box
+                        input.StartTime.form-control(type="text" placeholder="Select Time").leave-box-1
+                        button.calendar-btn-starttime(type="button")
+                            i.clock-icon(style="-webkit-mask: url('assets/images/clock.svg') no-repeat center;")
+                        //- small.form-text.error-msg Select your leave end date.
+            .col-lg-4 
+                .mb-4.form-box.position-relative
+                    .heading-label Time Difference
+                    .input-saved.leave-box-2 -
+                //- .mb-4
+                    label.form-label(for="StartTime") EndTime
+                        span.text-maroon *
+                    .form-box
+                        input.EndTime.form-control(type="text" placeholder="Select Time").leave-box-1
+                        button.calendar-btn-endtime(type="button")
+                            i.clock-icon(style="-webkit-mask: url('assets/images/clock.svg') no-repeat center;")
+                        //- small.form-text.error-msg Select your leave end date.
+        //- .row    
+            .col-lg-4
+                .mb-4.form-box
+                    .heading-label Time Difference
+                    .input-saved.leave-box-2 02 hours
+                    //- label.form-label(for="DelegatorName") Time Difference
+                    //-     //- span.text-maroon *
+                    //- input#DelegatorName.form-control(type="text" placeholder="06 Hours").leave-box-2
+                    //- small.form-text.error-msg Enter Delegators Name.
+        .row 
+            .col-lg-4 
+                 .mb-4
+                    label.form-label(for="StartTime") Actual Time
+                        span.text-maroon *
+                    .form-box
+                        input.StartTime.form-control(type="text" placeholder="Select ").leave-box-1
+                        button.calendar-btn-starttime(type="button")
+                            i.clock-icon(style="-webkit-mask: url('assets/images/clock.svg') no-repeat center;")
+                        //- small.form-text.error-msg Select your leave end date.
+            .col-lg-4 
+                .mb-4.form-box.position-relative
+                    .heading-label Actual Time
+                    .input-saved.leave-box-2 -
+                        i.calendar-icon.d-inline-flex.bg-grey2(style="-webkit-mask: url('assets/images/clock.svg') no-repeat center;width: 25px;height: 25px;inset-inline-end: 10px;position: absolute;")
+        .row
+            
+            .col-lg-12
+                .mb-4.form-box
+                    label.form-label(for="Reason") Reason for Permission 
+                        span.text-maroon *
+                    textarea#Reason.form-control(rows="5" placeholder="Enter reason for permission" required)
+                    //- small.form-text.error-msg Required field — please explain your reason.
+        .text-end
+            button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Submit Request    
+    if page == "apply-for-travel" 
+        h2.fw-900.text-black.mb-4.form-box.fs-26 Create New Permission Request
+        .row 
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Permission Type 
+                        span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(value="") Select leave type
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave
+                    //- small.form-text.error-msg Please select leave type
+            .col-lg-4            
+                .mb-4
+                        label.form-label(for="StartDate") Start Date
+                            span.text-maroon *
+                        .form-box
+                            input.StartDate.form-control(type="text" placeholder="Select date").leave-box-1
+                            button.calendar-btn-startdate(type="button")
+                                i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+            .col-lg-4            
+                .mb-4
+                        label.form-label(for="EndDate") End Date
+                            span.text-maroon *
+                        .form-box
+                            input.EndDate.form-control(type="text" placeholder="Select date").leave-box-1
+                            button.calendar-btn-enddate(type="button")
+                                i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                            //- small.form-text.error-msg Select your leave end date.        
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="DelegatorName") Course ID 
+                        span.text-maroon *
+                    input#DelegatorName.form-control(type="text" placeholder="Enter Course ID").leave-box-1
+                    //- small.form-text.error-msg Enter Delegators Name.
+            .col-lg-4
+                .mb-4.form-box
+                    .heading-label Total Travel Days 
+                    .input-saved.leave-box-2 06 Hours
+                    //- label.form-label(for="DelegatorName") Total Travel Days 
+                    //-     span.text-maroon *
+                    //- input#DelegatorName.form-control(type="text" placeholder="06 Hours").leave-box-2
+                    //- small.form-text.error-msg Enter Delegators Name.
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Travel to Country  
+                        span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(value="") Select leave type
+                        option(value="casual") Casual Leave
+                        option(value="sick") Sick Leave
+                        option(value="earned") Earned Leave
+                        option(value="unpaid") Unpaid Leave
+                    //- small.form-text.error-msg Please select leave type
+        .row   
+            .col-lg-4
+                .row    
+                    .col-lg-12
+                        .mb-4.form-box
+                            label.form-label(for="DelegatorName") Travel to City
+                                span.text-maroon *
+                            input#DelegatorName.form-control(type="text" placeholder="Qatar").leave-box-1
+                            //- small.form-text.error-msg Enter Delegators Name.
+                    .col-lg-12
+                        .mb-4.form-box
+                            .heading-label Travel Category
+                            .input-saved.leave-box-2 Business
+                            //- label.form-label(for="DelegatorName") Travel Catogory
+                            //-     span.text-maroon *
+                            //- input.bg-grey7#DelegatorName.form-control(type="text" placeholder="06 Hours").leave-box-1
+                            //- small.form-text.error-msg Enter Delegators Name.
+            .col-lg-8
+
+                        label.form-label(for="DelegatorName") Enter reason of travel
+                            span.text-maroon *
+                        textarea#Reason.form-control(rows="6" placeholder="Enter reason of travel" required)
+                        //- small.form-text.error-msg Enter Delegators Name.
+
+        
+        .row
+            .col-lg-12
+                    .mb-4.form-box
+                        label.form-label(for="Attachment") Attachment
+                        .choose-attachment.position-relative.w-100
+                            i.d-inline-flex(style="background-image:url(assets/images/upload-btn.svg);width:100px;height:100px;")
+                            input#Attachment(type="file" accept=".pdf,.jpg,.png" )
+                            p.upload-text
+                                | Drag & Drop  or 
+                                span.upload-btn.text-blue Upload
+        .text-end
+            button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Submit Request    
+   
+    if page == "apply-for-task" 
+        h2.fw-900.text-black.mb-4.form-box.fs-26 Create New Task
+        .row    
+            .col-lg-4
+                .mb-4.form-box
+                    .heading-label Created by
+                    .input-saved.leave-box-2 Ahmed bin Saleh
+                    //- label.form-label(for="DelegatorName") Created by
+                    //-     span.text-maroon *
+                    //- input#DelegatorName.form-control(type="text" placeholder="Ahmed bin Saleh").leave-box-2
+                    //- small.form-text.error-msg Enter Delegators Name.
+            .col-lg-4
+                .mb-4.form-box
+                    .heading-label Created Date
+                    .input-saved.leave-box-2 12/12/25
+                    //- label.form-label(for="DelegatorName") Created Date
+                    //-     span.text-maroon *
+                    //- input#DelegatorName.form-control(type="text" placeholder="22/10/2024").leave-box-2
+                    //- small.form-text.error-msg Enter Delegators Name.
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="DelegatorName") Assign To
+                        //- span.text-maroon *
+                    input#DelegatorName.form-control(type="text" placeholder="Enter Employee Name").leave-box-1
+                    //- small.form-text.error-msg Enter Delegators Name.
+        .row 
+            .col-lg-4            
+                .mb-4
+                        label.form-label(for="StartDate") Start Date
+                            //- span.text-maroon *
+                        .form-box
+                            input.StartDate.form-control(type="text" placeholder="Select date").leave-box-1
+                            button.calendar-btn-startdate(type="button")
+                                i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                            //- small.form-text.error-msg Select your leave end date.
+            .col-lg-4
+                .mb-4.form-box.status-status
+                    label.form-label(for="LeaveType") Status
+                        //- span.text-maroon *
+                    select.statusType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(
+                        value="pending"
+                        data-html='<div class="d-flex gap-2 align-items-center"><button class="box-inprogress btn  fs-14">In Progress</button></div>'
+                        ) In progress
+                        option(
+                        value="pending"
+                        data-html='<div class="d-flex gap-2 align-items-center"><button class="box-reject btn  fs-14">Overdue</button></div>'
+                        ) Overdue
+                        option(
+                        value="in-progress"
+                        data-html='<div class="d-flex gap-2 align-items-center"><button class="box-pending btn  fs-14">Pending</button></div>'
+                        ) Pending
+                        option(
+                        value="pending"
+                        data-html='<div class="d-flex gap-2 align-items-center"><button class="box-approve btn  fs-14">Completed</button></div>'
+                        ) Completed
+                        option(
+                        value="pending"
+                        data-html='<div class="d-flex gap-2 align-items-center"><button class="box-notstarted btn  fs-14">Not Started</button></div>'
+                        ) Not Started
+                    //- small.form-text.error-msg Please select leave type
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Priority Level
+                        //- span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(value="casual" data-html='<div class="d-flex gap-2 align-items-center"><div class="circle-border-blue"><i class="circle-shape bg-blue" style="-webkit-mask:url(assets/images/circle-11.svg) no-repeat center / contain;width:10px;height:10px;"></i></div><span class="text-blue">Moderate</span></div>') Modarate
+                        option(value="casual" data-html='<div class="d-flex gap-2 align-items-center"><div class="circle-border-yellow"><i class="circle-shape bg-yellow" style="-webkit-mask:url(assets/images/circle-11.svg) no-repeat center / contain;width:10px;height:10px;"></i></div><span class="text-yellow">High</span></div>') High
+                        option(value="casual" data-html='<div class="d-flex gap-2 align-items-center"><div class="circle-border-light-green"><i class="circle-shape bg-light-green" style="-webkit-mask:url(assets/images/circle-11.svg) no-repeat center / contain;width:10px;height:10px;"></i></div><span class="text-light-green">Low</span></div>') Low
+                        option(value="casual" data-html='<div class="d-flex gap-2 align-items-center"><div class="circle-border-maroon"><i class="circle-shape bg-maroon" style="-webkit-mask:url(assets/images/circle-11.svg) no-repeat center / contain;width:10px;height:10px;"></i></div><span class="text-maroon">Critical</span></div>') Critical
+
+        
+        .row    
+            .col-lg-12
+                .mb-4.form-box
+                    label.form-label(for="DelegatorName") Task Name
+                        //- span.text-maroon *
+                    input#DelegatorName.form-control(type="text" placeholder="Finalize New Hiring Guidelines").leave-box-1
+                    //- small.form-text.error-msg Enter Delegators Name.
+
+        .row
+            
+            .col-lg-12
+                .mb-4.form-box
+                    label.form-label(for="Reason") Task Description
+                        //- span.text-maroon *
+                    textarea#Reason.form-control(rows="5" placeholder="Enter reason for permission" required)
+                    //- small.form-text.error-msg Required field — please explain your reason.
+        .text-end            
+            button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Submit Request    
+
+    if page == "update-task" 
+        h2.fw-900.text-black.mb-4.form-box.fs-26 Update Task
+        .row    
+            .col-lg-4
+                .mb-4.form-box
+                    .heading-label Task ID
+                    .input-saved.leave-box-2 #5680907
+                   
+            .col-lg-4
+                .mb-4.form-box
+                    .heading-label Created by
+                    .input-saved.leave-box-2 Ahmed bin Saleh
+            .col-lg-4
+                .mb-4.form-box
+                    .heading-label Created date
+                    .input-saved.leave-box-2 22/10/2024
+        .row 
+            .col-lg-4            
+                .mb-4.form-box
+                        label.form-label(for="DelegatorName") Assign To
+                            //- span.text-maroon *
+                        input#DelegatorName.form-control(type="text" placeholder="name").leave-box-1
+                        //- small.form-text.error-msg Enter Delegators Name.
+            .col-lg-4
+                .mb-4
+                        label.form-label(for="StartDate") Deadline
+                            span.text-maroon *
+                        .form-box
+                            input.StartDate.form-control(type="text" placeholder="Select date").leave-box-1
+                            button.calendar-btn-startdate(type="button")
+                                i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                            //- small.form-text.error-msg Select your leave end date.
+
+            .col-lg-4
+                .mb-4.form-box.status-status
+                    label.form-label(for="LeaveType") Status
+                        //- span.text-maroon *
+                    select.statusType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(
+                        value="pending"
+                        data-html='<div class="d-flex gap-2 align-items-center"><button class="box-inprogress btn  fs-14">In Progress</button></div>'
+                        ) In progress
+                        option(
+                        value="pending"
+                        data-html='<div class="d-flex gap-2 align-items-center"><button class="box-reject btn  fs-14">Overdue</button></div>'
+                        ) Overdue
+                        option(
+                        value="in-progress"
+                        data-html='<div class="d-flex gap-2 align-items-center"><button class="box-pending btn  fs-14">Pending</button></div>'
+                        ) Pending
+                        option(
+                        value="pending"
+                        data-html='<div class="d-flex gap-2 align-items-center"><button class="box-approve btn  fs-14">Completed</button></div>'
+                        ) Completed
+                        option(
+                        value="pending"
+                        data-html='<div class="d-flex gap-2 align-items-center"><button class="box-notstarted btn  fs-14">Not Started</button></div>'
+                        ) Not Started
+                    //- small.form-text.error-msg Please select leave type
+        .row 
+            .col-lg-8            
+                .mb-4.form-box
+                        label.form-label(for="DelegatorName") Assign To
+                            //- span.text-maroon *
+                        input#DelegatorName.form-control(type="text" placeholder="name").leave-box-1
+                        //- small.form-text.error-msg Enter Delegators Name.
+            .col-lg-4
+                .mb-4.form-box
+                    label.form-label(for="LeaveType") Priority Level
+                        //- span.text-maroon *
+                    select.LeaveType.form-select.leave-box-1.select-leave( data-placeholder="Select Type")
+                        option(value="casual" data-html='<div class="d-flex gap-2 align-items-center"><div class="circle-border-blue"><i class="circle-shape bg-blue" style="-webkit-mask:url(assets/images/circle-11.svg) no-repeat center / contain;width:10px;height:10px;"></i></div><span class="text-blue">Moderate</span></div>') Modarate
+                        option(value="casual" data-html='<div class="d-flex gap-2 align-items-center"><div class="circle-border-yellow"><i class="circle-shape bg-yellow" style="-webkit-mask:url(assets/images/circle-11.svg) no-repeat center / contain;width:10px;height:10px;"></i></div><span class="text-yellow">High</span></div>') High
+                        option(value="casual" data-html='<div class="d-flex gap-2 align-items-center"><div class="circle-border-light-green"><i class="circle-shape bg-light-green" style="-webkit-mask:url(assets/images/circle-11.svg) no-repeat center / contain;width:10px;height:10px;"></i></div><span class="text-light-green">Low</span></div>') Low
+                        option(value="casual" data-html='<div class="d-flex gap-2 align-items-center"><div class="circle-border-maroon"><i class="circle-shape bg-maroon" style="-webkit-mask:url(assets/images/circle-11.svg) no-repeat center / contain;width:10px;height:10px;"></i></div><span class="text-maroon">Critical</span></div>') Critical
+
+                    //- small.form-text.error-msg Please select leave type
+        .row
+             
+            .col-lg-12
+                .mb-4.form-box
+                    .heading-label Task Description
+                    .input-saved.leave-box-2 Review, consolidate, and finalize the new hiring guidelines to ensure alignment with organizational policies and HR best practices. This includes incorporating feedback from relevant stakeholders, standardizing procedures for recruitment and onboarding, and preparing the final version for approval and implementation. The finalized document should clearly outline hiring criteria, approval workflows, required documentation, and compliance requirements.
+        .text-end
+            button(type="submit" data-bs-toggle="modal" data-bs-target="#leaveModal").text-white.submit-btn Update Status   
+if page == "update-task"
+    .box-1.leave-request.p-32
+        .comment-holder
+            .item
+                .d-flex.gap-3.align-items-center.mb-3
+                    .name-icon.fs-20.bg-blue.text-white.rounded-pill AB
+                    p.mb-0.fs-20.text-black.opc-70.fw-500 Ahmed Bin Fasil
+                    p.mb-0.fs-16.fw-350.text-black.opc-70.time 2 Hours ago
+                p.fs-16.text-black.opc-70.mb-0 Just saw the new policy updates. What do you all think about the changes to vacation time?
+            .item
+                .d-flex.gap-3.align-items-center.mb-3
+                    .name-icon.fs-20.bg-light-blue.text-white.rounded-pill FF
+                    p.mb-0.fs-20.text-black.opc-70.fw-500 Fathima Fida
+                    p.mb-0.fs-16.fw-350.text-black.opc-70.time 2 Hours ago
+                p.fs-16.text-black.opc-70.mb-0 Just saw the new policy updates. What do you all think about the changes to vacation time?
+            .item 
+                .add-comments 
+                    textarea#AddressOnLeave.form-control(rows="5" placeholder="Add Comments").leave-box-1
+            .item 
+                .text-end
+                    button(type="submit" data-bs-toggle="modal" data-bs-target="#CommentModal").comment-btn Add Comment
+    .modal.fade#CommentModal.comment-modal(tabindex="-1", aria-labelledby="commentModalLabel", aria-hidden="true")
+        .modal-dialog.modal-dialog-centered
+            .modal-content
+                //- .modal-header
+                    //- h1.modal-title.fs-5#commentModalLabel Modal title
+                    //- button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+                .modal-body
+                    .d-flex.flex-column.gap-4.align-items-center
+                        .fs-20.fw-bold.text-black Important Notice
+                        p.opc-70.text-black.text-center Do not include confidential information. Submitted comments are sent via email notifications.
+                .modal-footer.d-flex.fs-18
+                    button.btn.btn-grey1(type="button", data-bs-dismiss="modal").btn-cancel.rounded-pill  Cancel
+                    button(type="submit").comment-btn.rounded-pill Add Comment

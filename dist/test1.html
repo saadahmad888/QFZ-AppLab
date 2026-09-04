@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap">
+    </noscript>
+    <link rel="stylesheet" href="assets/css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <noscript>
+      <link rel="stylesheet" href="assets/css/app.css">
+    </noscript>
+    <title>Bootstrap | SCSS PUG</title>
+  </head>
+  <body>
+    <div class="bla" id="id">lkjg;lkg;klgl;kglku<img class="img-fluid" src="mimages/kg,k" alt=",jhkjh" width="4999"></div>
+    <header class="header bg-grey4">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between"> <img class="img-fluid main-logo" src="assets/images/logo-black.svg">
+          <div class="d-flex gap-2 gap-lg-3 align-items-center"><a class="inline-block pending-approvals-btn position-relative" href="#"> <span class="rounded-pill badge-pending-approvals">7<span class="visually-hidden">unread msg</span></span><span class="d-inline-flex"><i class="size-28 d-inline-block" style="background:url(assets/images/checklist-header.svg) center no-repeat"></i></span></a>
+            <button class="btn btn-white notification-btn py-10 position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#notification" aria-controls="notification"><span class="rounded-pill badge-notification">7<span class="visually-hidden">unread msg</span></span><span class="d-inline-flex"><i class="size-28 d-inline-block" style="background:url(assets/images/notification-bell.svg) center no-repeat"></i></span></button>
+            <div class="offcanvas offcanvas-end notification-canvas" tabindex="-1" id="notification" aria-labelledby="notificationLabel">
+              <div class="offcanvas-header">
+                <button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <h1 class="fs-40 offcanvas-title">Notification</h1>
+                <p class="fs-20 text-black-light mb-3">You have <span class="fw-900">3</span> new notifications</p>
+                <form class="d-flex form-request mb-3 w-100" role="search">
+                  <input class="form-control rounded-pill pe-5 w-100" type="search" placeholder="Search Request ID..." aria-label="Search"><span class="bg-blue search-btn d-flex align-items-center justify-content-center"><i class="search-icon d-inline-flex" style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;"> </i></span>
+                </form>
+                <div class="notification-holder">
+                  <div class="notification-details d-flex justify-content-between mb-32">
+                    <div class="div d-flex gap-3">  
+                      <div class="read-box">Unread</div>
+                      <div class="unread-box">Read</div>
+                    </div>
+                    <div class="filter-box">Filter<i class="size-28 d-inline-block" style="background:url(assets/images/sort.svg) center no-repeat"></i></div>
+                  </div>
+                  <div class="notification-list"> 
+                    <div class="box-unread">
+                      <h6 class="fs-16 fw-900 heading">Leave Request Approved</h6>
+                      <p class="fs-14 fw-350 reason">Your leave request from Sep 20–23 was approved by<span class="fw-900 text-black-light"> Manager Ali.</span></p>
+                      <p class="fs-14 fw-350 time"> 2 minutes ago</p>
+                      <div class="status-approved"> <i class="size-28 d-inline-block" style="background:url(assets/images/tick.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-unread">
+                      <h6 class="fs-16 fw-900 heading">All-Staff Meeting</h6>
+                      <p class="fs-14 fw-350 reason">Don’t forget: All-hands staff meeting today at 2:00 PM.</p>
+                      <p class="fs-14 fw-350 time"> 5 minutes ago</p>
+                      <div class="status-important"><i class="size-28 d-inline-block" style="background:url(assets/images/important.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-unread">
+                      <h6 class="fs-16 fw-900 heading">Leave Request Rejected</h6>
+                      <p class="fs-14 fw-350 reason">Your leave request from Sep 20–23 was <span class="fw-900 text-black-light">rejected </span> by <span class="fw-900 text-black-light">Manager Ali.</span> Reason: “Team workload high.”</p>
+                      <p class="fs-14 fw-350 time"> 1 hours ago</p>
+                      <div class="status-rejected"> <i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Task Due Tomorrow</h6>
+                      <p class="fs-14 fw-350 reason">Task “Prepare HR Survey Report” is due <span class="fw-900 text-black-light">tomorrow at 4 PM.</span></p>
+                      <p class="fs-14 fw-350 time">	Today at 11:15 AM</p>
+                      <div class="status-important-light"><i class="size-28 d-inline-block" style="background:url(assets/images/important.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Travel Request Rejected</h6>
+                      <p class="fs-14 fw-350 reason">Travel request for Oct 10–15 was rejected. Reason: “Budget exceeded.”</p>
+                      <p class="fs-14 fw-350 time"> Today at 09:30 AM</p>
+                      <div class="status-rejected-light"><i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Schooling Allowance Approved</h6>
+                      <p class="fs-14 fw-350 reason">Schooling allowance for Zaid Ahmed <span class="fw-900 text-black-light">Zaid Ahmed</span>has been approved.</p>
+                      <p class="fs-14 fw-350 time"> Today at 07:49 AM</p>
+                      <div class="status-approved-light"><i class="size-28 d-inline-block" style="background:url(assets/images/tick.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Schooling Allowance Rejected</h6>
+                      <p class="fs-14 fw-350 reason">Claim rejected. Reason: “Missing receipt attachment.”</p>
+                      <p class="fs-14 fw-350 time"> Yesterday at 06:42 PM</p>
+                      <div class="status-rejected-light"><i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Action Required – Attendance Correction</h6>
+                      <p class="fs-14 fw-350 reason">Your attendance correction request for Aug 31 is pending HR review.</p>
+                      <p class="fs-14 fw-350 time"> Yesterday at 04:13 PM</p>
+                      <div class="status-rejected-light"><i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Action Required – Attendance Correction</h6>
+                      <p class="fs-14 fw-350 reason">Your attendance correction request for Aug 31 is pending HR review.</p>
+                      <p class="fs-14 fw-350 time"> Yesterday at 04:13 PM</p>
+                      <div class="status-rejected-light"><i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Action Required – Attendance Correction</h6>
+                      <p class="fs-14 fw-350 reason">Your attendance correction request for Aug 31 is pending HR review.</p>
+                      <p class="fs-14 fw-350 time"> Yesterday at 04:13 PM</p>
+                      <div class="status-rejected-light"><i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="lang-switcher btn btn-white rounded-pill p-2 p-lg-3 d-flex gap-0 gap-lg-2 align-items-center"><span class="d-inline-flex"><i class="size-22x23 d-inline-block" style="background:url(assets/images/qatar-flag.svg) center no-repeat"></i></span>
+              <p class="d-none d-lg-block fw-500 fs-18 mb-0">العربية </p>
+              <div class="div dropdown"></div>
+            </button>
+            <button class="profile-switcher btn btn-white rounded-pill p-1 d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="initials size-49x48">AB</span><span class="fw-500 fs-18"><i class="dropdown-arrow d-inline-block size-30x12" style="background:url('assets/images/dropdown-arrow.svg') no-repeat center; transition: transform 0.3s ease;"></i></span></button>
+            <ul class="dropdown-menu profile-dropdown">
+              <li><a class="dropdown-item text-black fs-18 fw-350 py-2 d-flex justify-content-between align-items-center" href="#"><span>Profile</span><i class="menu-arrow" style="background:url('assets/images/logout-arrow.svg') no-repeat center; width:12px; height:12px; display:inline-block; margin-left:8px;"></i></a></li>
+              <li><a class="dropdown-item text-black fs-18 fw-350 py-2 d-flex justify-content-between align-items-center" href="#"><span>Logout</span><i class="menu-arrow" style="background:url('assets/images/logout-arrow.svg') no-repeat center; width:12px; height:12px; display:inline-block; margin-left:8px;"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header><button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables."> Custom tooltip
+</button>
+<button id="popoverButton" type="button" class="btn btn-primary btn-lg" data-bs-toggle="popover" title="ESM in Browser" data-bs-content="Bang!">Custom popover</button>
+    <div class="container-lg">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown button</button>
+        <ul class="dropdown-menu">
+          <li></li><a class="dropdown-item" href="#">Action</a>
+          <li></li><a class="dropdown-item" href="#">Another action</a>
+          <li></li><a class="dropdown-item" href="#">Something else here</a>
+        </ul>
+      </div>
+      <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+          <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button>
+        </div>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">1</div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">2</div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">3</div>
+          <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">4</div>
+        </div>
+      </nav>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Accordion Item #1</button>
+          </h2>
+          <div class="accordion-collapse collapse show" id="collapseOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body"><strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Accordion Item #2</button>
+          </h2>
+          <div class="accordion-collapse collapse" id="collapseTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body"><strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Accordion Item #3</button>
+          </h2>
+          <div class="accordion-collapse collapse" id="collapseThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body"></div><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the 
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Do ad nostrud velit duis eu dolor qui culpa sit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer py-3 py-lg-24 mt-32">
+      <h4 class="fs-18 fw-350 text-black opc-60"> <a class="text-black opc-60 text-decoration-none" href="#">Privacy Policy</a><span class="text-black opc-60">&nbsp;|&nbsp;</span><a class="text-black opc-60 text-decoration-none" href="#">Terms and Conditions</a><span class="text-black opc-60">&nbsp;|&nbsp;</span><span class="text-black opc-60">© 2025 Qatar Free Zones Authority. All Rights Reserved.</span></h4>
+    </div>
+    <div class="test cursor-pointer" style="width: 100px; height:150px; background: yellow;">lkhglkg</div>
+    <script src="assets/js/vendor/jquery-3.6.3.min.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script>
+    <script type="importmap">
+      {
+          "imports": {
+              "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+              "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+          }
+      }
+    </script>
+    <script type="module">
+      import { Popover } from 'bootstrap';
+      //- new Popover(document.getElementById('popoverButton'))
+      
+    </script>
+    <script>
+      $(function(){
+          $('[data-bs-toggle="tooltip"]').tooltip();
+      })
+    </script>
+  </body>
+</html>

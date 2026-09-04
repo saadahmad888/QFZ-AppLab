@@ -1,0 +1,153 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 30px;
+  padding-inline: 100px;
+
+  @media (min-width:1700px) {
+    padding: 30px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 20px;
+  }
+}
+
+.login-base-image {
+  position: relative;
+  z-index: 1;
+}
+
+.login-top-image {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+
+  [dir="rtl"] & {
+    inset-inline-start: auto;
+    inset-inline-end: 50%;
+  }
+}
+
+.login-form {
+
+  .email-icon,
+  .pwd-icon {
+    position: absolute;
+    top: 55%;
+    inset-inline-start: 16px;
+    transform: translate(0%, -50%);
+
+    @include media-breakpoint-down(sm) {
+      inset-inline-start: 10px;
+
+    }
+  }
+
+  .form-control {
+    padding: 16px;
+    padding-inline-start: 50px;
+
+    @include media-breakpoint-down(sm) {
+      padding: 10px;
+      padding-inline-start: 40px;
+    }
+  }
+}
+
+.login-holder {
+  height: auto;
+
+  @media(max-width:1700px) {
+    height: calc(100% - 70px);
+  }
+
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.login-box {
+  padding-block: 60px;
+  padding-inline: 88px 110px;
+
+  @media (min-width:1700px) {
+    padding-block: 116px;
+  }
+
+  button {
+    border-radius: 99px;
+    border: 1.5px solid rgba(10, 10, 11, 0.08);
+    background: var(--WHITE, #FEFEFE);
+
+    &:hover {
+      border: 1.5px solid rgba(10, 10, 11, 0.3);
+    }
+  }
+}
+
+.form-control {
+  &::placeholder {
+     @include fluid-steps(font-size, (12px,12px,16px));
+
+    color: $black1 !important;
+  }
+
+  // WebKit Browsers (Chrome, Safari, Opera)
+  &::-webkit-input-placeholder {
+     @include fluid-steps(font-size, (12px,12px,16px));
+    color: $black1 !important;
+    opacity: 60%;
+    font-weight: 500;
+  }
+
+  // Firefox 19+
+  &::-moz-placeholder {
+     @include fluid-steps(font-size, (12px,12px,16px));
+    color: $black1 !important;
+    font-weight: 500;
+  }
+
+  // IE 10+
+  &:-ms-input-placeholder {
+    @include fluid-steps(font-size, (12px,12px,16px));
+    color: $black1 !important;
+    font-weight: 500;
+  }
+
+  // Firefox 18- (older)
+  &:-moz-placeholder {
+     @include fluid-steps(font-size, (12px,12px,16px));
+    color: $black1 !important;
+    font-weight: 500;
+  }
+}
+
+@include media-breakpoint-down(xxl) {
+  .login-box {
+    padding-block: 50px;
+    padding-inline: 40px 50px;
+  }
+
+}
+
+@include media-breakpoint-down(lg) {
+  .login-wrapper {
+    height: auto;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .login-box {
+    padding-block: 30px;
+    padding-inline: 30px 30px;
+  }
+}

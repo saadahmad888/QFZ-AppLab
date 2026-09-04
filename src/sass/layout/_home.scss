@@ -1,0 +1,7 @@
+[dir="ltr"] h1[dir="rtl"] {
+  display: none;
+}
+
+[dir="rtl"] h1[dir="ltr"] {
+  display: none;
+}

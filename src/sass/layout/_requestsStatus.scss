@@ -1,0 +1,87 @@
+.request-status-list {
+    height: calc(100% - 78px);
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $light-blue2 transparent;
+
+    // Chrome, Safari, Edge, Opera
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $light-blue1 ;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $light-blue1;
+    }
+
+    li {
+        &:hover {
+            background: $light-grey;
+
+            &::after {
+                content: "";
+                position: absolute;
+                -webkit-mask-image: url(../images/end-arrow.svg);
+                -webkit-mask-repeat: no-repeat;
+                background-color: #79AAFA;
+                mask-size: 7px;
+                width: 10px;
+                height: 12px;
+                top: 37%;
+                inset-inline-end: 16px;
+            }
+        }
+
+        position: relative;
+
+
+    }
+}
+
+.request-status {
+    height: 100%;
+    // padding: 32px;
+
+    a {
+        color: $black;
+
+    }
+
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        flex-shrink: 0;
+
+        @include media-breakpoint-down(lg) {
+            width: 40px;
+            height: 40px;
+        }
+
+    }
+
+    .icon-box.pending {
+        background-color: $yellow;
+    }
+
+    .icon-box.reject {
+        background-color: $maroon;
+    }
+
+    .icon-box.approved {
+        background-color: $green;
+    }
+
+}

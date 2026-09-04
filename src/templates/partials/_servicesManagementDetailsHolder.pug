@@ -1,0 +1,389 @@
+.page-padding
+    include ../partials/_breadCrumb
+    include ../partials/_servicesDetails
+    if page == "update-performance-evaluation-form"
+        .modal#leaveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Form Updated
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Update Failed
+                        //- img(src="assets/images/success.gif" alt="success")
+                        //- .video-container(style="width: 100%; max-width: 600px;")
+                        //-     video.tickVideo(autoplay muted loop playsinline style="width:150px; height:150px; display:block; margin:auto;")
+                        //-         source(src="assets/videos/success-apply-leave.mp4" type="video/mp4")
+                        //- h5.modal-title.fw-900 Request Submitted
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done 
+    
+    if page == "line-mngr-performance-mngt-review"
+        .modal#leaveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Change Requested
+                                br 
+                                |[QFZA-00001]
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Change Request 
+                                br 
+                                |[QFZA-00001] Rejected
+                        //- img(src="assets/images/success.gif" alt="success")
+                        //- .video-container(style="width: 100%; max-width: 600px;")
+                        //-     video.tickVideo(autoplay muted loop playsinline style="width:150px; height:150px; display:block; margin:auto;")
+                        //-         source(src="assets/videos/success-apply-leave.mp4" type="video/mp4")
+                        //- h5.modal-title.fw-900 Request Submitted
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done 
+        .modal#approveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Form [QFZA-00001] Approved
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Form [QFZA-00001] Rejected
+                        //- img(src="assets/images/success.gif" alt="success")
+                        //- .video-container(style="width: 100%; max-width: 600px;")
+                        //-     video.tickVideo(autoplay muted loop playsinline style="width:150px; height:150px; display:block; margin:auto;")
+                        //-         source(src="assets/videos/success-apply-leave.mp4" type="video/mp4")
+                        //- h5.modal-title.fw-900 Request Submitted
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done 
+    if page == "performance-mngt-review-h1-employee"
+        .modal#leaveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Submitted
+                                br
+                                |[QFZA-00001]
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Failed
+                                br
+                                |[QFZA-00001] 
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done
+    if page == "performance-mngt-review-h2-employee"
+        .modal#leaveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Submitted
+                                br
+                                |[QFZA-00001]
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Failed
+                                br
+                                |[QFZA-00001] 
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done
+    
+    if page == "performance-mngt-review-h1-DC"
+        .modal#leaveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Submitted
+                                br
+                                |[QFZA-00001]
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Failed
+                                br
+                                |[QFZA-00001] 
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done
+    
+    if page == "performance-mngt-review-h2-DC"
+        .modal#leaveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Submitted
+                                br
+                                |[QFZA-00001]
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Failed
+                                br
+                                |[QFZA-00001] 
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done
+    
+    if page == "performance-mngt-review-h1-LM"
+        .modal#leaveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Submitted
+                                br
+                                |[QFZA-00001]
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Failed
+                                br
+                                |[QFZA-00001] 
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done
+    if page == "performance-mngt-review-h2-LM"
+        .modal#leaveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Submitted
+                                br
+                                |[QFZA-00001]
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Failed
+                                br
+                                |[QFZA-00001] 
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done
+               
+    if page == "dept-chief-performance-mngt-review"
+        .modal#leaveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Change Requested
+                                br 
+                                |[QFZA-00001]
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Change Request 
+                                br 
+                                |[QFZA-00001] Rejected
+                        //- img(src="assets/images/success.gif" alt="success")
+                        //- .video-container(style="width: 100%; max-width: 600px;")
+                        //-     video.tickVideo(autoplay muted loop playsinline style="width:150px; height:150px; display:block; margin:auto;")
+                        //-         source(src="assets/videos/success-apply-leave.mp4" type="video/mp4")
+                        //- h5.modal-title.fw-900 Request Submitted
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done 
+        .modal#approveModal(tabindex="-1").leaveModal
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                        .modalLoader.text-center
+                            .spinner-border(role='status')
+                            p.mt-2 Please wait...
+                        .successWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/success.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:150px; height:150px;"
+                                    )
+                            h5.modal-title.fw-900 Form [QFZA-00001] Approved
+                        .failureWrapper.d-flex.align-items-center.justify-content-center.flex-column.d-none
+                            lottie-player#successAnim(
+                                        src="assets/images/failure.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width:120px; height:120px;"
+                                    )
+                            h5.modal-title.fw-900 Form [QFZA-00001] Rejected
+                        //- img(src="assets/images/success.gif" alt="success")
+                        //- .video-container(style="width: 100%; max-width: 600px;")
+                        //-     video.tickVideo(autoplay muted loop playsinline style="width:150px; height:150px; display:block; margin:auto;")
+                        //-         source(src="assets/videos/success-apply-leave.mp4" type="video/mp4")
+                        //- h5.modal-title.fw-900 Request Submitted
+                    .modal-footer
+                        button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done 
+    
+    
+    include ../partials/_footer
+if page == "update-performance-evaluation-form"
+    script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
+    script(src="assets/js/videoloop.js")
+if page == "line-mngr-performance-mngt-review"
+    script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
+    script(src="assets/js/videoloop.js")
+    script(src="assets/js/videoloop-approve.js")
+    
+if page == "dept-chief-performance-mngt-review"
+    script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
+    script(src="assets/js/videoloop.js")
+    script(src="assets/js/videoloop-approve.js")
+if page == "performance-mngt-review-h1-employee"
+    script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
+    script(src="assets/js/videoloop.js")
+    script(src="assets/js/videoloop-approve.js")
+if page == "performance-mngt-review-h2-employee"
+    script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
+    script(src="assets/js/videoloop.js")
+    script(src="assets/js/videoloop-approve.js")
+if page == "performance-mngt-review-h1-LM"
+    script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
+    script(src="assets/js/videoloop.js")
+    script(src="assets/js/videoloop-approve.js")
+if page == "performance-mngt-review-h2-LM"
+    script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
+    script(src="assets/js/videoloop.js")
+    script(src="assets/js/videoloop-approve.js")
+if page == "performance-mngt-review-h1-DC"
+    script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
+    script(src="assets/js/videoloop.js")
+    script(src="assets/js/videoloop-approve.js")
+if page == "performance-mngt-review-h2-DC"
+    script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
+    script(src="assets/js/videoloop.js")
+    script(src="assets/js/videoloop-approve.js")
+        

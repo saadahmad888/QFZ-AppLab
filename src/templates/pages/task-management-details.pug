@@ -1,0 +1,101 @@
+doctype html
+html(lang="en" dir="ltr")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css")
+        link(rel="stylesheet", href="assets/css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        //- link(rel="stylesheet", href="assets/css/serviceMangtDetails.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+
+
+
+        title QFZ Task Management Details Page
+    body.bg-grey
+        -var page = "task-details"
+        include ../partials/_header
+        include ../partials/_servicesManagementDetailsHolder
+        include ../partials/_chatbot
+        
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js")
+        script(type="importmap").
+            {
+                "imports": {
+                    "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+                    "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+                }
+            }
+        script(type="module").
+            import { Popover } from 'bootstrap';
+            //- new Popover(document.getElementById('popoverButton'))
+        script(src="assets/js/select2/select2-subpages.js")
+        script(src="assets/js/date-time-picker/date-time.js")
+        script(src="assets/js/file-upload.js")
+        script(src="assets/js/chatbot.js")
+        script(src="https://cdn.jsdelivr.net/npm/flatpickr")
+        script(src="assets/js/markdown.js")
+        script(src="assets/js/markdown-custom.js")
+        script(src="https://cdn.jsdelivr.net/npm/marked/marked.min.js")
+        //- script.
+            $(document).ready(function() {
+                $('.js-select').select2({
+                 width: 'auto',
+                minimumResultsForSearch: Infinity,
+                placeholder: $(this).data('placeholder'),
+                allowClear: false,
+                //- dropdownCssClass: 'custom-dropdown',  
+                //- containerCssClass: 'custom-select2'   
+                });
+            });
+        //- script.
+            const startPicker = flatpickr(".StartDate", {
+                dateFormat: "Y-m-d",
+                disableMobile: true,
+                clickOpens: false
+            });
+
+            const endPicker = flatpickr(".EndDate", {
+                dateFormat: "Y-m-d",
+                disableMobile: true,
+                clickOpens: false
+            });
+
+            document.querySelector(".calendar-btn-startdate").addEventListener("click", function() {
+                startPicker.open();
+            });
+
+            document.querySelector(".calendar-btn-enddate").addEventListener("click", function() {
+                endPicker.open();
+            });
+        //- script.
+            document.addEventListener("DOMContentLoaded", function() {
+            const fileInput = document.getElementById("Attachment");
+            const uploadBtn = document.querySelector(".upload-btn");
+            const fileName = document.querySelector(".file-name");
+
+            uploadBtn.addEventListener("click", function() {
+                fileInput.click(); // triggers file dialog
+            });
+
+            fileInput.addEventListener("change", function() {
+                if (fileInput.files.length > 0) {
+                fileName.textContent = fileInput.files[0].name;
+                } else {
+                fileName.textContent = "No file chosen";
+                }
+            });
+            });
+        //- script.
+            $(document).ready(function() {
+                $('.LeaveType').select2({
+                    width: '100%',
+                    placeholder: $(this).data('placeholder'),
+                    allowClear: false,
+                    minimumResultsForSearch: Infinity,
+                    dropdownCssClass: 'select-leave', 
+                    containerCssClass: 'select-leave' 
+                });
+            });
+

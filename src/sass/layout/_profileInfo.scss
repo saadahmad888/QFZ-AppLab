@@ -1,0 +1,102 @@
+.profile-section-holder {
+  h3 , figure-caption ,p{
+    text-align: center;
+  }
+p {
+  overflow-wrap: anywhere;
+    word-break: break-word;
+}
+.profile-bg {
+  border-radius: 50%;
+  background-color: rgb(235, 235, 234);
+  padding: 18px;
+}
+  .border-bottom-1 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .terms-and-conditions {
+    position: relative;
+
+    &:before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 60%;
+      transform: translateY(-50%);
+      background-image: url("../images/terms-and-conditions-icon.svg");
+      background-repeat: no-repeat;
+      inset-inline-start: 0px;
+    }
+
+    a {
+      padding-inline-start: 30px;
+    }
+  }
+
+  .language {
+    position: relative;
+
+    &:before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 60%;
+      transform: translateY(-50%);
+      background-image: url("../images/language-square.svg");
+      background-repeat: no-repeat;
+      inset-inline-start: 0px;
+    }
+
+    a {
+      padding-inline-start: 30px;
+    }
+  }
+
+  .button-toggle-wrapper {
+    position: relative;
+  }
+
+  .toggle-options {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: max-content;
+  }
+
+  .logout-btn {
+    position: relative;
+    padding-inline-start: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("../images/logout1.svg");
+      width: 24px;
+      height: 24px;
+      inset-inline-start: 0px;
+    }
+  }
+
+  .initials-big {
+    width: 132px;
+    height: 132px;
+    background-color: rgb(235, 235, 234);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(64, 65, 66);
+    font-weight: 500;
+
+    @include media-breakpoint-down(md) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QFZ AppLab - Portal Directory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #0284c7;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --badge-completed: #10b981;
+      --radius: 12px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #0b1120 0%, #0f172a 50%, #1e1b4b 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+      color: #fff;
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-bg);
+      color: #e2e8f0;
+      font-weight: 500;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: #334155;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 14px 20px 14px 44px;
+      font-size: 1rem;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary-light);
+    }
+    .search-box i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+    }
+    .category-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(8px);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .category-card:hover {
+      border-color: #475569;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+    }
+    .card-header h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+    .page-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .page-item a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.938rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .page-item a:hover {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.4);
+      color: #fff;
+      transform: translateX(4px);
+    }
+    .badge-status {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-tag"><i class="bi bi-layers-fill"></i> QFZ Phase 2 Enterprise Portal</div>
+      <h1>QFZ Application Hub</h1>
+      <p class="subtitle">Complete catalog of static templates and responsive user views for QFZ ESS.</p>
+      
+      <div class="quick-actions">
+        <a href="./home.html" class="btn-primary"><i class="bi bi-house-door-fill"></i> Launch Home Page</a>
+        <a href="./login.html" class="btn-secondary"><i class="bi bi-box-arrow-in-right"></i> Login Page</a>
+        <a href="./profile.html" class="btn-secondary"><i class="bi bi-person-circle"></i> Profile Page</a>
+        <a href="./home-ar.html" class="btn-secondary"><i class="bi bi-translate"></i> Arabic Home</a>
+      </div>
+
+      <div class="search-box">
+        <i class="bi bi-search"></i>
+        <input type="text" id="pageSearch" placeholder="Search templates (e.g. Leave, Review, Approval)..." onkeyup="filterPages()">
+      </div>
+    </header>
+
+    <main class="categories" id="categoriesGrid">
+      <!-- Core & Essentials -->
+      <div class="category-card">
+        <div class="card-header">
+          <div class="card-icon"><i class="bi bi-grid-fill"></i></div>
+          <h2>Core & Auth</h2>
+        </div>
+        <ul class="page-list">
+          <li class="page-item"><a href="./home.html"><span>Home Page (EN)</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./home-ar.html"><span>Home Page (AR)</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./login.html"><span>Login Page</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./login-ar.html"><span>Login Page (AR)</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./profile.html"><span>Profile Page</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./profile-ar.html"><span>Profile Page (AR)</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./terms-and-conditions.html"><span>Terms & Conditions</span> <span class="badge-status">Ready</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Leave & Attendance -->
+      <div class="category-card">
+        <div class="card-header">
+          <div class="card-icon"><i class="bi bi-calendar-check-fill"></i></div>
+          <h2>Leave & Attendance</h2>
+        </div>
+        <ul class="page-list">
+          <li class="page-item"><a href="./leave-management.html"><span>Leave Management</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./leave-details.html"><span>Leave Details</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./apply-for-leave.html"><span>Apply for Leave</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./update-leave.html"><span>Update Leave</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./leave-management-details.html"><span>Leave Management Details</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./leave-management-details-with-approvals.html"><span>Leave Details with Approvals</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./time-attendance.html"><span>Time & Attendance</span> <span class="badge-status">Ready</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Requests & Letters -->
+      <div class="category-card">
+        <div class="card-header">
+          <div class="card-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+          <h2>Requests & Letters</h2>
+        </div>
+        <ul class="page-list">
+          <li class="page-item"><a href="./hr-letter.html"><span>HR Letter Hub</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./apply-for-hrletter.html"><span>Apply for HR Letter</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./hr-letter-details.html"><span>HR Letter Details</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./hr-letter-details-with-approvals.html"><span>HR Letter with Approvals</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./permission-requests.html"><span>Permission Requests</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./apply-for-permissionrequests.html"><span>Apply Permission Request</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./permission-requests-details.html"><span>Permission Details</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./permission-request-details-with-approvals.html"><span>Permission with Approvals</span> <span class="badge-status">Ready</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Travel & Schooling -->
+      <div class="category-card">
+        <div class="card-header">
+          <div class="card-icon"><i class="bi bi-airplane-engines-fill"></i></div>
+          <h2>Travel & Schooling</h2>
+        </div>
+        <ul class="page-list">
+          <li class="page-item"><a href="./travel-requests.html"><span>Travel Requests</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./apply-for-travel-request.html"><span>Apply Travel Request</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./travel-request-details.html"><span>Travel Details</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./travel-requests-details-with-approvals.html"><span>Travel with Approvals</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./schooling-allowances.html"><span>Schooling Allowances</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./apply-for-schoolingallowances.html"><span>Apply Schooling Allowances</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./schooling-allowances-details.html"><span>Schooling Details</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./schooling-allowances-details-with-approvals.html"><span>Schooling with Approvals</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./update-schooling.html"><span>Update Schooling</span> <span class="badge-status">Ready</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Tasks & Approvals -->
+      <div class="category-card">
+        <div class="card-header">
+          <div class="card-icon"><i class="bi bi-check2-circle"></i></div>
+          <h2>Tasks & Approvals</h2>
+        </div>
+        <ul class="page-list">
+          <li class="page-item"><a href="./task-management.html"><span>Task Management</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./apply-for-task.html"><span>Apply for Task</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./task-management-details.html"><span>Task Details</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./task-update.html"><span>Update Task</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./task-management-details-with-approvals.html"><span>Task with Approvals</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./all-approvals-page.html"><span>All Approvals</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./all-requests-page.html"><span>All Requests</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./quick-links-approved-requests.html"><span>Approved Requests</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./quick-links-pending-requests.html"><span>Pending Requests</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./quick-links-rejected-requests.html"><span>Rejected Requests</span> <span class="badge-status">Ready</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Performance Management -->
+      <div class="category-card">
+        <div class="card-header">
+          <div class="card-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <h2>Performance Management</h2>
+        </div>
+        <ul class="page-list">
+          <li class="page-item"><a href="./employee-performance-mngt.html"><span>Employee Performance</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./create-performance-evaluation-form.html"><span>Create Evaluation Form</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./performance-evaluation-form-view.html"><span>Evaluation Form View</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./update-performance-evaluation-form.html"><span>Update Evaluation Form</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./line-mngr-performance-mngt-review.html"><span>Line Manager Review</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./dept-chief-performance-mngt-review.html"><span>Dept Chief Review</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./performance-mngt-view.html"><span>Performance View</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./performance-mngt-review-h1-employee.html"><span>H1 Review - Employee</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./performance-mngt-review-h1-LM.html"><span>H1 Review - Line Manager</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./performance-mngt-review-h1-DC.html"><span>H1 Review - Dept Chief</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./performance-mngt-review-h2-employee.html"><span>H2 Review - Employee</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./performance-mngt-review-h2-LM.html"><span>H2 Review - Line Manager</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./performance-mngt-review-h2-DC.html"><span>H2 Review - Dept Chief</span> <span class="badge-status">Ready</span></a></li>
+        </ul>
+      </div>
+
+      <!-- System & Error Pages -->
+      <div class="category-card">
+        <div class="card-header">
+          <div class="card-icon"><i class="bi bi-exclamation-triangle-fill"></i></div>
+          <h2>System Pages</h2>
+        </div>
+        <ul class="page-list">
+          <li class="page-item"><a href="./error-404.html"><span>Error 404 - Not Found</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./error-500.html"><span>Error 500 - Server Error</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./error-501.html"><span>Error 501 - Not Implemented</span> <span class="badge-status">Ready</span></a></li>
+          <li class="page-item"><a href="./error-502.html"><span>Error 502 - Bad Gateway</span> <span class="badge-status">Ready</span></a></li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p>AppLab Enterprise Solutions &copy; QFZ ESS Platform</p>
+    </footer>
+  </div>
+
+  <script>
+    function filterPages() {
+      const input = document.getElementById('pageSearch').value.toLowerCase();
+      const items = document.querySelectorAll('.page-item');
+      const cards = document.querySelectorAll('.category-card');
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(input)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      cards.forEach(card => {
+        const visibleItems = card.querySelectorAll('.page-item:not([style*="display: none"])');
+        card.style.display = visibleItems.length > 0 ? 'flex' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,2096 @@
+.requests.box-1.p-32
+    .row.flex-shrink-0.d-flex.align-items-center 
+        .col-lg
+            if page == "leave-management"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Leave Requests 
+            .col-lg
+            if page == "time-attendance"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Time Attendance Transcations
+            if page == "hr-letter"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg HR Letter Requests
+            if page == "schooling-allowances"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Schooling Allowance Requests
+            if page == "permission-requests"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Permission Requests
+            if page == "travel-requests"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Travel Requests
+            if page == "task-management"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Task Management Requests
+            if page == "quick-links-pending-requests"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Pending Requests
+            if page == "quick-links-approved-requests"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Approved Requests
+            if page == "all-requests-page"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Request Information
+            if page == "quick-links-rejected-requests"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Rejected Requests
+            if page == "all-approvals-page"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Requests Pending Approval
+            if page == "employee-performance-mngt"
+                h2.fw-900.text-black.mb-2.fs-26.custom-nowrap-lg Performance Evaluation Forms 
+            
+        .col-lg-auto
+            if page == "leave-management"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap    
+                    h4.fw-500.fs-16.text-black Filter by:
+                    .select-wrapper.fs-18
+                        select.js-select.form-select( data-placeholder="Select Status")
+                            option(value="" selected ) Action
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+
+                    
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Select Type" )
+                            option(value="" selected ) 
+                            option(value="action") vv
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;") 
+            if page == "time-attendance"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap    
+                    //- h4.fw-500.fs-16.text-black Filter by:
+                    //- .select-wrapper.fs-18
+                        select.js-select.form-select( data-placeholder="Select Employee Status")
+                            option(value="" selected ) Select Status
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+
+                    .form-box 
+                        input.StartDate.form-control(type="text" placeholder="Select From Date").leave-box-1
+                        button.calendar-btn-startdate(type="button")
+                            i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                    .form-box 
+                        input.EndDate.form-control(type="text" placeholder="Select To Date").leave-box-1
+                        button.calendar-btn-enddate(type="button")
+                            i.calendar-icon(style="-webkit-mask: url('assets/images/calendar-icon.svg') no-repeat center;")
+                    a.btn.bg-blue.text-white.d-flex.align-items-center(href="#").btn-claculate.fs-16 Calculate
+                        //- span.close-icon
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search tasks / Employee" aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+            if page == "hr-letter"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap    
+                    h4.fw-500.fs-16.text-black Filter by:
+                    .select-wrapper.fs-18
+                        select.js-select.form-select( data-placeholder="Select Letter Type")
+                            option(value="" selected ) Select Status
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+
+                        //- span.close-icon
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;") 
+            if page == "schooling-allowances"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap    
+                    h4.fw-500.fs-16.text-black Filter by:
+                    
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Select Status" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Select Status" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    
+                        //- span.close-icon
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+            if page == "permission-requests"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap    
+                    h4.fw-500.fs-16.text-black Filter by:
+                    
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Permission Status" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Select Status" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    
+                        //- span.close-icon
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+            if page == "travel-requests"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap    
+                    h4.fw-500.fs-16.text-black Filter by:
+                    
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Travel Status" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Select Status" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    
+                        //- span.close-icon
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+            if page == "employee-performance-mngt"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap    
+                    h4.fw-500.fs-16.text-black Evaluation of:
+                    
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="My Performance" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Year" )
+                            option(value="" selected ) 2026
+                            option(value="action") 2026
+                            option(value="another") 2025
+                            option(value="something") 2024
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Status" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+           
+
+            if page == "all-approvals-page"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap    
+                    h4.fw-500.fs-16.text-black Filter by:
+                    
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Travel Status" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Select Status" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    
+                        //- span.close-icon
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+            if page == "task-management"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap    
+                    h4.fw-500.fs-16.text-black Filter by:
+                    
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="Permission Status" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    .select-wrapper.fs-18
+                        select.js-select.form-select(data-placeholder="All" )
+                            option(value="" selected ) Select Type
+                            option(value="action") Action
+                            option(value="another") Another action
+                            option(value="something") Something else here
+                    
+                        span.close-icon
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+            if page == "quick-links-pending-requests"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap 
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+            if page == "quick-links-approved-requests"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap 
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+            if page == "quick-links-rejected-requests"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap 
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+            if page == "all-requests-page"
+                .filter-section.d-flex.align-items-center.gap-12.flex-wrap 
+                    form.d-flex(role="search").form-request
+                        input.form-control.rounded-pill.pe-5(type="search" placeholder="Search Request ID..." aria-label="Search")
+                        button.btn.btn-blue.search-btn(type="submit").d-flex.align-items-center.justify-content-center
+                            i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;")
+            
+    if page == "leave-management"                        
+        .request-table.table-responsive 
+            table.requestTableData
+                thead
+                    tr.fw-900  
+                        th Request ID 
+                        th(style="width: 600px;") Leave Type 
+                        th Request Date 
+                        th Start Date 
+                        th End Date
+                        th Total Days 
+                        th Delegator Name 
+                        th Status
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sick Leave
+                        td 23/10/2025
+                        td 23/10/2025                
+                        td 21/10/2025
+                        td 03 days 
+                        td Layla Al-Mansoori
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approval Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View    
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sick Leave
+                        td 23/10/2025
+                        td 23/10/2025                
+                        td 21/10/2025
+                        td 03 days 
+                        td Layla Al-Mansoori
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14.fw-500  
+                                    |  Approval Rejected
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View  
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Long Sick Leave (Half Salary)
+                        td 23/10/2025
+                        td 23/10/2025                
+                        td 21/10/2025
+                        td 03 days 
+                        td Layla Al-Mansoori
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.btn-warning.fs-14  
+                                    |  Approval Pending
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="") 
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Funeral Leave (Outside Qatar)
+                        td 23/10/2025
+                        td 23/10/2025                
+                        td 21/10/2025
+                        td 03 days 
+                        td Layla Al-Mansoori
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View    
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Work Accident Leave (Expatriate)
+                        td 23/10/2025
+                        td 23/10/2025                
+                        td 21/10/2025
+                        td 03 days 
+                        td Layla Al-Mansoori
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14.fw-500  
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View  
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Annual Leave
+                        td 23/10/2025
+                        td 23/10/2025                
+                        td 21/10/2025
+                        td 03 days 
+                        td Layla Al-Mansoori
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.btn-warning.fs-14  
+                                    |  Pending
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="") 
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Annual Leave
+                        td 23/10/2025
+                        td 23/10/2025                
+                        td 21/10/2025
+                        td 03 days 
+                        td Layla Al-Mansoori
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.btn-warning.fs-14  
+                                    |  Pending
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="") 
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Annual Leave
+                        td 23/10/2025
+                        td 23/10/2025                
+                        td 21/10/2025
+                        td 03 days 
+                        td Layla Al-Mansoori
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.btn-warning.fs-14  
+                                    |  Pending
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="") 
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Annual Leave
+                        td 23/10/2025
+                        td 23/10/2025                
+                        td 21/10/2025
+                        td 03 days 
+                        td Layla Al-Mansoori
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.btn-warning.fs-14  
+                                    |  Pending
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="") 
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Annual Leave
+                        td 23/10/2025
+                        td 23/10/2025                
+                        td 21/10/2025
+                        td 03 days 
+                        td Layla Al-Mansoori
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.btn-warning.fs-14  
+                                    |  Pending
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="") 
+                                    |  View  
+   
+    if page == "time-attendance"                        
+        .request-table.table-responsive 
+            table 
+                thead
+                    tr.fw-900  
+                        th Personnel <br> Number
+                        th Employee <br> Status
+                        th Transaction <br> Date
+                        th Day <br> Name
+                        th Has <br> Permission
+                        th Permission <br> Type 
+                        th Permission Reason 
+                        th Time In
+                        th Time Out
+                        th Building In 
+                        th Building Out 
+                        th Gate In
+                        th Gate Out
+                        th Total Hours Required 
+                        th Total Hours 
+                        th  Differences in Hours
+                tbody 
+                    tr
+                        td 100203
+                        td Pressent
+                        td 16/02/2025
+                        td Thursday                
+                        td -
+                        td -
+                        td -
+                        td.text-nowrap 05.30 AM
+                        td.text-nowrap 06.00 AM
+                        td BIP
+                        td BIP
+                        td.office-name Ras Abu Fontas Administration Office
+                        td.office-name Ras Abu Fontas Administration Office
+                        td 5.00
+                        td 5.18
+                        td.text-green -0.18
+                    tr
+                        td 100203
+                        td Pressent
+                        td 16/02/2025
+                        td Thursday                
+                        td -
+                        td -
+                        td -
+                        td.text-nowrap 05.30 AM
+                        td.text-nowrap 06.00 AM
+                        td BIP
+                        td BIP
+                        td.office-name Ras Abu Fontas Administration Office
+                        td.office-name Ras Abu Fontas Administration Office
+                        td 5.00
+                        td 5.18
+                        td.text-green -0.18
+                    tr
+                        td 100203
+                        td Pressent
+                        td 16/02/2025
+                        td Thursday                
+                        td -
+                        td -
+                        td -
+                        td.text-nowrap 05.30 AM
+                        td.text-nowrap 06.00 AM
+                        td BIP
+                        td BIP
+                        td.office-name Ras Abu Fontas Administration Office
+                        td.office-name Ras Abu Fontas Administration Office
+                        td 5.00
+                        td 5.18
+                        td.text-green -0.18
+                    tr
+                        td 100203
+                        td Pressent
+                        td 16/02/2025
+                        td Thursday                
+                        td -
+                        td -
+                        td -
+                        td.text-nowrap 05.30 AM
+                        td.text-nowrap 06.00 AM
+                        td BIP
+                        td BIP
+                        td.office-name Ras Abu Fontas Administration Office
+                        td.office-name Ras Abu Fontas Administration Office
+                        td 5.00
+                        td 5.18
+                        td.text-green -0.18
+                    tr
+                        td 100203
+                        td Pressent
+                        td 16/02/2025
+                        td Thursday                
+                        td -
+                        td -
+                        td -
+                        td.text-nowrap 05.30 AM
+                        td.text-nowrap 06.00 AM
+                        td BIP
+                        td BIP
+                        td.office-name Ras Abu Fontas Administration Office
+                        td.office-name Ras Abu Fontas Administration Office
+                        td 5.00
+                        td 5.18
+                        td.text-green -0.18
+
+                    tr
+                        td 100203
+                        td Pressent
+                        td 16/02/2025
+                        td Thursday                
+                        td -
+                        td -
+                        td -
+                        td.text-nowrap 05.30 AM
+                        td.text-nowrap 06.00 AM
+                        td BIP
+                        td BIP
+                        td.office-name Ras Abu Fontas Administration Office
+                        td.office-name Ras Abu Fontas Administration Office
+                        td 5.00
+                        td 5.18
+                        td.text-green -0.18
+                    tr
+                        td 100203
+                        td Pressent
+                        td 16/02/2025
+                        td Thursday                
+                        td -
+                        td -
+                        td -
+                        td.text-nowrap 05.30 AM
+                        td.text-nowrap 06.00 AM
+                        td BIP
+                        td BIP
+                        td.office-name Ras Abu Fontas Administration Office
+                        td.office-name Ras Abu Fontas Administration Office
+                        td 5.00
+                        td 5.18
+                        td.text-green -0.18
+                    tr
+                        td 100203
+                        td Pressent
+                        td 16/02/2025
+                        td Thursday                
+                        td -
+                        td -
+                        td -
+                        td.text-nowrap 05.30 AM
+                        td.text-nowrap 06.00 AM
+                        td BIP
+                        td BIP
+                        td.office-name Ras Abu Fontas Administration Office
+                        td.office-name Ras Abu Fontas Administration Office
+                        td 5.00
+                        td 5.18
+                        td.text-green -0.18
+                    tr
+                        td 100203
+                        td Pressent
+                        td 16/02/2025
+                        td Thursday                
+                        td -
+                        td -
+                        td -
+                        td.text-nowrap 05.30 AM
+                        td.text-nowrap 06.00 AM
+                        td BIP
+                        td BIP
+                        td.office-name Ras Abu Fontas Administration Office
+                        td.office-name Ras Abu Fontas Administration Office
+                        td 5.00
+                        td 5.18
+                        td.text-green -0.18
+
+    if page == "hr-letter"                        
+        .request-table.table-responsive 
+            table
+                thead
+                    tr.fw-900  
+                        th Request ID 
+                        th Letter Type 
+                        th Report Type
+                        th Letter Certificate Group
+                        th Request Date 
+                        th Status
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Salary Certificate
+                        td Salary Certificate NOC Family-Immigration
+                        td Banks
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Salary Certificate
+                        td Salary Certificate NOC Family-Immigration
+                        td Banks
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Salary Certificate
+                        td Salary Certificate NOC Family-Immigration
+                        td Banks
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Salary Certificate
+                        td Salary Certificate NOC Family-Immigration
+                        td Banks
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Salary Certificate
+                        td Salary Certificate NOC Family-Immigration
+                        td Banks
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14  
+                                    |  Pending Approval
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Salary Certificate
+                        td Salary Certificate NOC Family-Immigration
+                        td Banks
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14  
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Salary Certificate
+                        td Salary Certificate NOC Family-Immigration
+                        td Banks
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-general.btn.fs-14  
+                                    |  Not submitted
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    
+    if page == "schooling-allowances"                        
+        .request-table.table-responsive 
+            table 
+                thead
+                    tr.fw-900  
+                        th Request ID 
+                        th Academic Year
+                        //- th Dependent’s Name
+                        //- th School Name
+                        //- th Class No.
+                        //- th Invoice No.
+                        //- th Semesters
+                        //- th Deserved <br> Amount
+                        //- th Paid Amount <br> Deserved
+                        //- th Invoice/Receipt <br> Amount
+                        th Status
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td 2025-2026
+                        //- td Omar Al-Farsi
+                        //- td.school-name Global Scholars Academy, Doha
+                        //- td 11 C
+                        //-td #A12345
+                        //-td 1st
+                        //-td 500 QAR
+                        //-td 230 QAR
+                        //-td 230 QAR
+
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td 2025-2026
+                        //- td Omar Al-Farsi
+                        //- td.school-name Global Scholars Academy, Doha
+                        //- td 11 C
+                        //-td #A12345
+                        //-td 1st
+                        //-td 500 QAR
+                        //-td 230 QAR
+                        //-td 230 QAR
+
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td 2025-2026
+                        //- td Omar Al-Farsi
+                        //- td.school-name Global Scholars Academy, Doha
+                        //- td 11 C
+                        //-td #A12345
+                        //-td 1st
+                        //-td 500 QAR
+                        //-td 230 QAR
+                        //-td 230 QAR
+
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td 2025-2026
+                        //- td Omar Al-Farsi
+                        //- td.school-name Global Scholars Academy, Doha
+                        //- td 11 C
+                        //-td #A12345
+                        //-td 1st
+                        //-td 500 QAR
+                        //-td 230 QAR
+                        //-td 230 QAR
+
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.btn-pending.fs-14  
+                                    |  Pending
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td 2025-2026
+                        //- td Omar Al-Farsi
+                        //- td.school-name Global Scholars Academy, Doha
+                        //- td 11 C
+                        //-td #A12345
+                        //-td 1st
+                        //-td 500 QAR
+                        //-td 230 QAR
+                        //-td 230 QAR
+
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14 
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td 2025-2026
+                        //- td Omar Al-Farsi
+                        //- td.school-name Global Scholars Academy, Doha
+                        //- td 11 C
+                        //-td #A12345
+                        //-td 1st
+                        //-td 500 QAR
+                        //-td 230 QAR
+                        //-td 230 QAR
+
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+
+
+    if page == "permission-requests"                        
+        .request-table.table-responsive 
+            table 
+                thead
+                    tr.fw-900  
+                        th Request ID 
+                        th(style="width: 600px;") Permission Type
+                        th Request Date 
+                        th Start Time
+                        th End Time 
+                        th Total Hours
+                        th Status
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sick Leave
+                        td 23/10/2025 
+                        td 12.00 PM
+                        td 02.00 PM
+                        td 04 Hours             
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="") 
+                                    |  View   
+
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sick Leave
+                        td 23/10/2025 
+                        td 12.00 PM
+                        td 08.00 PM
+                        td 04 Hours             
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View  
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sick Leave
+                        td 23/10/2025 
+                        td 12.00 PM
+                        td 08.00 PM
+                        td 04 Hours             
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14  
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View  
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sick Leave
+                        td 23/10/2025 
+                        td 12.00 PM
+                        td 08.00 PM
+                        td 04 Hours             
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View  
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sick Leave
+                        td 23/10/2025 
+                        td 12.00 PM
+                        td 08.00 PM
+                        td 04 Hours             
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.btn-warning.fs-14 
+                                    |  Pending
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View  
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sick Leave
+                        td 23/10/2025 
+                        td 12.00 PM
+                        td 08.00 PM
+                        td 04 Hours             
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14 
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View  
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sick Leave
+                        td 23/10/2025 
+                        td 12.00 PM
+                        td 08.00 PM
+                        td 04 Hours             
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View  
+                   
+    if page == "travel-requests"                        
+        .request-table.table-responsive 
+            table 
+                thead
+                    tr.fw-900  
+                        th Request ID 
+                        th Request Type 
+                        th Course ID
+                        th Travel Start Date 
+                        th Travel End Date
+                        th Total Days 
+                        th Travel to Country
+                        th Travel to City
+                        th Travel Category
+                        th Status
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business
+                        td -
+                        td 23/10/2025 
+                        td 28/04/2026
+                        td 21
+                        td Qatar
+                        td Doha
+                        td Outside    
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business
+                        td -
+                        td 23/10/2025 
+                        td 28/04/2026
+                        td 21
+                        td Qatar
+                        td Doha
+                        td Outside    
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business
+                        td -
+                        td 23/10/2025 
+                        td 28/04/2026
+                        td 21
+                        td Qatar
+                        td Doha
+                        td Outside    
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business
+                        td -
+                        td 23/10/2025 
+                        td 28/04/2026
+                        td 21
+                        td Qatar
+                        td Doha
+                        td Outside    
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business
+                        td -
+                        td 23/10/2025 
+                        td 28/04/2026
+                        td 21
+                        td Qatar
+                        td Doha
+                        td Outside    
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business
+                        td -
+                        td 23/10/2025 
+                        td 28/04/2026
+                        td 21
+                        td Qatar
+                        td Doha
+                        td Outside    
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business
+                        td -
+                        td 23/10/2025 
+                        td 28/04/2026
+                        td 21
+                        td Qatar
+                        td Doha
+                        td Outside    
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business
+                        td -
+                        td 23/10/2025 
+                        td 28/04/2026
+                        td 21
+                        td Qatar
+                        td Doha
+                        td Outside    
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business
+                        td -
+                        td 23/10/2025 
+                        td 28/04/2026
+                        td 21
+                        td Qatar
+                        td Doha
+                        td Outside    
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-2
+                                a.box-view.btn.btn-primary.fs-14(href="")  
+                                    |  View 
+                    
+    if page == "task-management"                        
+        .request-table.table-responsive 
+            table 
+                thead
+                    tr.fw-900  
+                        th Task ID 
+                        th Assigned To
+                        th Task Title 
+                        th Priority
+                        th Deadline
+                        th Status
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sarah Al-Farsi
+                        td Design Q3 Campaign Presentation
+                        td
+                            .d-flex.gap-2.align-items-center
+                                .circle-border-yellow
+                                    i.circle-shape.bg-yellow(
+                                        style="-webkit-mask:url('assets/images/circle-11.svg') no-repeat center / contain;width:10px;height:10px;")
+                                .text-yellow High
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14 
+                                    |  Pending
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")  
+                                        |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sarah Al-Farsi
+                        td Design Q3 Campaign Presentation
+                        td
+                            .d-flex.gap-2.align-items-center
+                                .circle-border-yellow
+                                    i.circle-shape.bg-yellow(
+                                        style="-webkit-mask:url('assets/images/circle-11.svg') no-repeat center / contain;width:10px;height:10px;")
+                                .text-yellow High
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-inprogress.btn.fs-14  
+                                    |  In progress
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")  
+                                        |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sarah Al-Farsi
+                        td Design Q3 Campaign Presentation
+                        td
+                            .d-flex.gap-2.align-items-center
+                                .circle-border-yellow
+                                    i.circle-shape.bg-yellow(
+                                        style="-webkit-mask:url('assets/images/circle-11.svg') no-repeat center / contain;width:10px;height:10px;")
+                                .text-yellow High
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-inprogress.btn.fs-14 
+                                    |  In progress
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")  
+                                        |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sarah Al-Farsi
+                        td Design Q3 Campaign Presentation
+                        td
+                            .d-flex.gap-2.align-items-center
+                                .circle-border-yellow
+                                    i.circle-shape.bg-yellow(
+                                        style="-webkit-mask:url('assets/images/circle-11.svg') no-repeat center / contain;width:10px;height:10px;")
+                                .text-yellow High
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-inprogress.btn.fs-14  
+                                    |  In progress
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")  
+                                        |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sarah Al-Farsi
+                        td Design Q3 Campaign Presentation
+                        td
+                            .d-flex.gap-2.align-items-center
+                                .circle-border-light-green
+                                    i.circle-shape.bg-light-green(
+                                        style="-webkit-mask:url('assets/images/circle-11.svg') no-repeat center / contain;width:10px;height:10px;")
+                                .text-light-green Low
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Completed
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")  
+                                        |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sarah Al-Farsi
+                        td Design Q3 Campaign Presentation
+                        td
+                            .d-flex.gap-2.align-items-center
+                                .circle-border-blue
+                                    i.circle-shape.bg-blue(
+                                        style="-webkit-mask:url('assets/images/circle-11.svg') no-repeat center / contain;width:10px;height:10px;")
+                                .text-blue Moderate
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-notstarted.btn.fs-14  
+                                    |  Not Started
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")  
+                                        |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Sarah Al-Farsi
+                        td Design Q3 Campaign Presentation
+                        td
+                            .d-flex.gap-2.align-items-center
+                                .circle-border-maroon
+                                    i.circle-shape.bg-maroon(
+                                        style="-webkit-mask:url('assets/images/circle-11.svg') no-repeat center / contain;width:10px;height:10px;")
+                                .text-maroon Critical
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14  
+                                    |  Overdue
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")  
+                                        |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+    if page == "employee-performance-mngt"                        
+        .request-table.table-responsive.employee-performance-mngt 
+            table 
+                thead
+                    tr.fw-900  
+                        th Form ID 
+                        th Stage
+                        th Date
+                        th Year
+                        th Employee Name
+                        th Status
+                        th Action
+                        th Pending with
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td.text-nowrap.fs-16 Objective Review
+                        td 27/08/2026
+                        td 2026      
+                        td Lina Al-Rahman        
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14 
+                                    |  Not Started
+                        td 
+                            .d-flex.gap-4
+                                //- .d-flex.gap-2
+                                //-     a.box-view.btn.btn-primary.fs-14(href="")  
+                                //-         |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+                        td Ahmed 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td.text-nowrap.fs-16 Objective Review
+                        td 27/08/2026
+                        td 2026      
+                        td Lina Al-Rahman        
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14 
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-4
+                                //- .d-flex.gap-2
+                                //-     a.box-view.btn.btn-primary.fs-14(href="")  
+                                //-         |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  Review
+                        td Ahmed 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td.text-nowrap.fs-16 Objective Review
+                        td 27/08/2026
+                        td 2026      
+                        td Lina Al-Rahman        
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Completed
+                        td 
+                            .d-flex.gap-4
+                                //- .d-flex.gap-2
+                                //-     a.box-view.btn.btn-primary.fs-14(href="")  
+                                //-         |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+                        td Ahmed 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td.text-nowrap.fs-16 Objective Review
+                        td 27/08/2026
+                        td 2026      
+                        td Lina Al-Rahman        
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14 
+                                    |  Not Started
+                        td 
+                            .d-flex.gap-4
+                                //- .d-flex.gap-2
+                                //-     a.box-view.btn.btn-primary.fs-14(href="")  
+                                //-         |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  Apply
+                        td Ahmed 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td.text-nowrap.fs-16 Objective Review
+                        td 27/08/2026
+                        td 2026      
+                        td Lina Al-Rahman        
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14 
+                                    |  Not Started
+                        td 
+                            .d-flex.gap-4
+                                //- .d-flex.gap-2
+                                //-     a.box-view.btn.btn-primary.fs-14(href="")  
+                                //-         |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  Update
+                        td Ahmed
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td.text-nowrap.fs-16 Objective Review
+                        td 27/08/2026
+                        td 2026      
+                        td Lina Al-Rahman        
+                        td 
+                            .d-flex.gap-2
+                                button.box-general.btn.fs-14 
+                                    |  In Progress
+                        td 
+                            .d-flex.gap-4
+                                //- .d-flex.gap-2
+                                //-     a.box-view.btn.btn-primary.fs-14(href="")  
+                                //-         |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+                        td None 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td.text-nowrap.fs-16 Objective Review
+                        td 27/08/2026
+                        td 2026      
+                        td None        
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14 
+                                    |  Not Started
+                        td 
+                            .d-flex.gap-4
+                                //- .d-flex.gap-2
+                                //-     a.box-view.btn.btn-primary.fs-14(href="")  
+                                //-         |  Update
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="")
+                                        |  View
+                        td Ahmed 
+                    
+    if page == "quick-links-pending-requests"                        
+        .request-table.table-responsive 
+            table 
+                thead
+                    tr.fw-900  
+                        th Request ID 
+                        th Request Type
+                        th Request Date
+                        //- th Pending With 
+                        th Status
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14  
+                                    |  Pending
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-pending-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14 
+                                    |  Pending
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-pending-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14 
+                                    |  Pending
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-pending-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14  
+                                    |  Pending
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-pending-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14  
+                                    |  Pending
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-pending-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14  
+                                    |  Pending
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-pending-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-pending.btn.fs-14 
+                                    |  Pending
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-pending-requests-details.html")
+                                        |  View
+    
+    if page == "quick-links-approved-requests"                       
+        .request-table.table-responsive 
+            table 
+                thead
+                    tr.fw-900  
+                        th Request ID 
+                        th Request Type
+                        th Request Date
+                        //- th Pending With 
+                        th Status
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-approved-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-approved-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-approved-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14 
+                                    |  Approved
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-approved-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-approved-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-approved-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-approve.btn.fs-14  
+                                    |  Approved
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-approved-requests-details.html")
+                                        |  View
+    
+    if page == "quick-links-rejected-requests"                      
+        .request-table.table-responsive 
+            table 
+                thead
+                    tr.fw-900  
+                        th Request ID 
+                        th Request Type
+                        th Request Date
+                        //- th Pending With 
+                        th Status
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14  
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-rejected-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-rejected-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14  
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-rejected-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14 
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-rejected-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14 
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-rejected-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14  
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-rejected-requests-details.html")
+                                        |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Travel Request
+                        td 23/10/2025              
+                        //- td Sarah Al-Farsi
+                        td 
+                            .d-flex.gap-2
+                                button.box-reject.btn.fs-14  
+                                    |  Rejected
+                        td 
+                            .d-flex.gap-4
+                                .d-flex.gap-2
+                                    a.box-view.btn.btn-primary.fs-14(href="quick-links-rejected-requests-details.html")
+                                        |  View
+    if page == "all-approvals-page"                      
+        .request-table.table-responsive 
+            table 
+                thead
+                    tr.fw-900  
+                        th Request ID 
+                        th Request Name
+                        th Request Type
+                        th Requester 
+                        th Request Date
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td Travel Management
+                        td Amina Al-Farsi
+                        td 23/10/2025              
+                        td 
+                            .d-flex.gap-2
+                                button.box-approval-approve-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#approve-request-modal")
+                                    |  Approved
+                                button.box-approval-reject-new.btn.btn-primary.fs-14.fw-500(type="submit" data-bs-toggle="modal" data-bs-target="#reject-request-modal")
+                                    |  Rejected
+                                a.box-view.btn.btn-primary.fs-14.fw-500(href="#")
+                                    |  View
+    if page == "all-requests-page"                      
+        .request-table.table-responsive 
+            table 
+                thead
+                    tr.fw-900  
+                        th Request ID 
+                        th Request Type
+                        th Request Date
+                        th Pending With 
+                        th Status          
+                        th Action
+                tbody 
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td 23/10/2025
+                        td Amina Al-Farsi  
+                        td 
+                            a.box-reject.btn.fs-14(href="#")
+                                |  Approved         
+                        td 
+                            a.box-view.btn.fs-14(href="#")
+                                |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td 23/10/2025
+                        td Amina Al-Farsi  
+                        td 
+                            a.box-approve.btn.fs-14(href="#")
+                                |  Approved         
+                        td 
+                            a.box-view.btn.fs-14(href="#")
+                                |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td 23/10/2025
+                        td Amina Al-Farsi  
+                        td 
+                            a.box-pending.btn.fs-14(href="#")
+                                |  Pending Approval        
+                        td 
+                            a.box-view.btn.fs-14(href="#")
+                                |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td 23/10/2025
+                        td Amina Al-Farsi  
+                        td 
+                            a.box-general.btn.fs-14(href="#")
+                                |  Not submitted       
+                        td 
+                            a.box-view.btn.fs-14(href="#")
+                                |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td 23/10/2025
+                        td Amina Al-Farsi  
+                        td 
+                            a.box-reject.btn.fs-14(href="#")
+                                |  Approved         
+                        td 
+                            a.box-view.btn.fs-14(href="#")
+                                |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td 23/10/2025
+                        td Amina Al-Farsi  
+                        td 
+                            a.box-approve.btn.fs-14(href="#")
+                                |  Approved         
+                        td 
+                            a.box-view.btn.fs-14(href="#")
+                                |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td 23/10/2025
+                        td Amina Al-Farsi  
+                        td 
+                            a.box-pending.btn.fs-14(href="#")
+                                |  Pending Approval        
+                        td 
+                            a.box-view.btn.fs-14(href="#")
+                                |  View
+                    tr
+                        td.text-nowrap.fs-16 QFZA-00004
+                        td Business Travel
+                        td 23/10/2025
+                        td Amina Al-Farsi  
+                        td 
+                            a.box-general.btn.fs-14(href="#")
+                                |  Not submitted       
+                        td 
+                            a.box-view.btn.fs-14(href="#")
+                                |  View
+                

@@ -1,0 +1,22 @@
+.request-overview-holder {
+    height: 100%;
+    a{
+        color: $black;
+        .request-box{
+             @include fluid-steps(padding, (16px, 32px));  
+            border-radius: 16px;
+            border: 1px solid $white;
+            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(34px);
+            &.bg-lightYellow{
+                background: var(--Primitives-Orange-orange-50, #FEF6EC);
+            }
+            &.bg-lightGreen{
+                background: var(--Primitives-Light-Green-green-50, #F1F9F5);
+            }
+            &.bg-lightRed{
+                background: var(--Primitives-Maroon-Maroon-50, #F4E9EC);
+            }
+        }
+    }
+}

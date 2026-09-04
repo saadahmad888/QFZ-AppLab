@@ -1,0 +1,31 @@
+/*!
+* Style Sheet for ""
+* version: 1
+* last modified:2023 By Applab
+* author: Applab
+* website: www.applab.qa
+*/
+
+/*b5 start -------------------------------------------------------------------------------------------------------------------*/
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+/*b5 end ---------------------------------------------------------------------------------------------------------------------*/
+
+@import 'base/fonts';
+@import 'themes/ltr';
+@import 'utilities/variables';
+
+
+
+@import 'utilities/mixins', 'utilities/functions';
+
+@import 'modules/buttons', 'base/reset', 'base/base';
+@import 'layout/header','layout/breadCrumb','layout/requestLM','layout/applyForLeave','layout/loginUser';
+@import 'layout/leaveBalance','layout/homeQuicklinks','layout/attendenceSummary','layout/attendenceStatus';
+@import 'layout/services' ,'layout/requests','layout/requestsStatus','layout/myPendingApprovals','layout/home';
+@import 'layout/chatbot','layout/profile','layout/profileInfo','layout/personalInfo';
+@import 'layout/errorPage','layout/servicesDetails' ;
+@import 'layout/businessCard','layout/requestOverview';
+@import 'layout/paginationCustom','layout/termsAndConditions';

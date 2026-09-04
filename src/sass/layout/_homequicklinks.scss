@@ -1,0 +1,104 @@
+
+.quick-links-list {
+    height: calc(100% - 78px);
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $light-blue2 transparent;
+
+    // Chrome, Safari, Edge, Opera
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $light-blue1 ;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $light-blue1;
+    }
+
+}
+
+.quick-links {
+    height: 100%;
+    // padding: 32px;
+
+    a {
+        color: $black;
+
+    }
+
+    @include media-breakpoint-down(xxl) {
+        padding: 16px;
+    }
+
+    //  @media (min-width:1600px){
+    //      height: calc(100% - 168px);
+    //  }
+    //  @media (max-width:1611px) and (min-width:1600px) {
+    //      height: calc(100% - 168px);
+    //  }
+    //  @media (max-width:1600px) and (min-width:1484px) {
+    //      height: calc(100% - 146px);
+    //  }
+    //  @media (max-width:1484px) and (min-width:1330px) {
+    //      height: calc(100% - 146px);
+    //  }
+    //   @media (max-width:1330px) and (min-width:1200px) {
+    //      height: calc(100% - 165px);
+    //  }
+
+
+}
+
+.quick-links-toggle {
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/burger-menu.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.quick-links-list {
+    // overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+}
+
+
+.quick-links-list.show {
+    max-height: 1000px;
+}
+
+
+@media (min-width: 1200px) {
+    .quick-links-list {
+        max-height: none;
+        // overflow: visible;
+    }
+
+    .quick-links-toggle {
+        display: none;
+    }
+}
+
+.quick-links-list li {
+    margin-top: 0;
+    transition: margin-top 0.3s ease;
+}
+
+
+.quick-links-list.show li {
+    margin-top: 12px;
+}

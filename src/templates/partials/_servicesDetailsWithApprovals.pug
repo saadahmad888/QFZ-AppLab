@@ -1,0 +1,622 @@
+.box-1.withFooter.leave-request.p-32.mb-0
+
+    if page == "leave-management-details-with-approvals"
+        .d-flex.justify-content-between.flex-column.flex-md-row
+            .d-flex.flex-column
+                h2.fw-900.text-black.text-nowrap.mb-4.fs-26 Request Informations
+                .d-flex.gap-3.mb-32
+                    p.fs-18.text-black.mb-0 Requester Name: 
+                        span.text-black3 Yousef Al-Mansour
+                    p.fs-18.text-black.mb-0 Request ID:
+                        span.text-black3 QFZA195
+                    p.fs-18.text-black.mb-0 Request ID: 
+                        span.text-black3 QFZA-00001
+                    p.fs-18.text-black.mb-0 Request Date:
+                        span.text-black3 13/06/2025
+            .d-flex 
+                .d-flex.gap-2.align-items-center.mb-2
+                    p.fs-18.fw-500.mb-0 Current Status:
+                    button.box-reject.btn.btn-danger.fs-16.fw-500  
+                        |  Rejected
+        .row.services-details-section.gy-4 
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Leave Type 
+                    .input-value.fs-18 Sick Leave
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Start Date  
+                    .input-value.fs-18 15/06/2025
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 End Date  
+                    .input-value.fs-18 15/06/2025
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Total Days 
+                    .input-value.fs-18 15/06/2025
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Remaining Leaves 
+                    .input-value.fs-18 23 days
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Delegator ID 
+                    .input-value.fs-18 QFZA-0195
+            .col-lg-6 
+                .box.p-24 
+                    .heading-sub.fs-18 Delegator Name  
+                    .input-value.fs-18 Ahmed bin Saleh
+            .col-lg-12 
+                .box.p-24 
+                    .heading-sub.fs-18 Reason for Leave  
+                    .input-value.fs-18 I am unwell and need time to rest and recover as advised by my doctor.
+            .col-lg-12 
+                .box.p-24 
+                    .heading-sub.fs-18 Attachment 
+                    .attachments
+                        .file
+                            span.icon.file
+                            span.filename.fs-14 Document.pdf
+                            span.icon.view
+                        .separator 
+                        .file
+                            span.icon.file
+                            span.filename.fs-14 Document.pdf
+                            span.icon.view
+
+    
+    //- if page == "quick-links-pending-requests-details"
+    //-     .d-flex.justify-content-between.flex-column.flex-md-row
+    //-         .d-flex.flex-column
+    //-             h2.fw-900.text-black.text-nowrap.mb-4.fs-26 Request Informations
+    //-             .d-flex.gap-3.mb-32
+    //-                 p.fs-18.text-black.mb-0 Request ID: 
+    //-                     span.text-black3 QFZA-00001
+    //-                 p.fs-18.text-black.mb-0 Request Date:
+    //-                     span.text-black3 13/06/2025
+    //-         .d-flex 
+    //-             .d-flex.gap-2.align-items-center.mb-2
+    //-                 p.fs-18.fw-500.mb-0 Current Status:
+    //-                 button.box-pending.btn.btn-danger.fs-16.fw-500  
+    //-                     |  Pending
+    //-     .row.services-details-section.gy-4 
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Request Type 
+    //-                 .input-value.fs-18 Business
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Start Date  
+    //-                 .input-value.fs-18 15/06/2025
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 End Date  
+    //-                 .input-value.fs-18 15/06/2025
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Course ID 
+    //-                 .input-value.fs-18 54831
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Total Travel Days 
+    //-                 .input-value.fs-18 21 days
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Travel to Country 
+    //-                 .input-value.fs-18 UAE
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Travel to City 
+    //-                 .input-value.fs-18 Dubai
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Travel Category  
+    //-                 .input-value.fs-18 Outside
+    //-         .col-lg-12 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Reason of Travel  
+    //-                 .input-value.fs-18 To attend a business meeting with clients and discuss project updates and future collaboration opportunities.
+    //-         .col-lg-12 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Attachment 
+    //-                 .attachments
+    //-                     .file
+    //-                         span.icon.file
+    //-                         span.filename.fs-14 Document.pdf
+    //-                         span.icon.view
+    //-                     .separator 
+    //-                     .file
+    //-                         span.icon.file
+    //-                         span.filename.fs-14 Document.pdf
+    //-                         span.icon.view
+    
+    //- if page == "quick-links-approved-requests-details"
+    //-     .d-flex.justify-content-between.flex-column.flex-md-row
+    //-         .d-flex.flex-column
+    //-             h2.fw-900.text-black.text-nowrap.mb-4.fs-26 Request Informations
+    //-             .d-flex.gap-3.mb-32
+    //-                 p.fs-18.text-black.mb-0 Request ID: 
+    //-                     span.text-black3 QFZA-00001
+    //-                 p.fs-18.text-black.mb-0 Request Date:
+    //-                     span.text-black3 13/06/2025
+    //-         .d-flex 
+    //-             .d-flex.gap-2.align-items-center.mb-2
+    //-                 p.fs-18.fw-500.mb-0 Current Status:
+    //-                 button.box-approve.btn.btn-danger.fs-16.fw-500  
+    //-                     |  Approved
+    //-     .row.services-details-section.gy-4 
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Request Type 
+    //-                 .input-value.fs-18 Business
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Start Date  
+    //-                 .input-value.fs-18 15/06/2025
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 End Date  
+    //-                 .input-value.fs-18 15/06/2025
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Course ID 
+    //-                 .input-value.fs-18 54831
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Total Travel Days 
+    //-                 .input-value.fs-18 21 days
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Travel to Country 
+    //-                 .input-value.fs-18 UAE
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Travel to City 
+    //-                 .input-value.fs-18 Dubai
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Travel Category  
+    //-                 .input-value.fs-18 Outside
+    //-         .col-lg-12 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Reason of Travel  
+    //-                 .input-value.fs-18 To attend a business meeting with clients and discuss project updates and future collaboration opportunities.
+    //-         .col-lg-12 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Attachment 
+    //-                 .attachments
+    //-                     .file
+    //-                         span.icon.file
+    //-                         span.filename.fs-14 Document.pdf
+    //-                         span.icon.view
+    //-                     .separator 
+    //-                     .file
+    //-                         span.icon.file
+    //-                         span.filename.fs-14 Document.pdf
+    //-                         span.icon.view
+    
+    //- if page == "quick-links-rejected-requests-details"
+    //-     .d-flex.justify-content-between.flex-column.flex-md-row
+    //-         .d-flex.flex-column
+    //-             h2.fw-900.text-black.text-nowrap.mb-4.fs-26 Request Informations
+    //-             .d-flex.gap-3.mb-32
+    //-                 p.fs-18.text-black.mb-0 Request ID: 
+    //-                     span.text-black3 QFZA-00001
+    //-                 p.fs-18.text-black.mb-0 Request Date:
+    //-                     span.text-black3 13/06/2025
+    //-         .d-flex 
+    //-             .d-flex.gap-2.align-items-center.mb-2
+    //-                 p.fs-18.fw-500.mb-0 Current Status:
+    //-                 button.box-reject.btn.btn-danger.fs-16.fw-500  
+    //-                     |  Rejected
+    //-     .row.services-details-section.gy-4 
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Request Type 
+    //-                 .input-value.fs-18 Business
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Start Date  
+    //-                 .input-value.fs-18 15/06/2025
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 End Date  
+    //-                 .input-value.fs-18 15/06/2025
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Course ID 
+    //-                 .input-value.fs-18 54831
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Total Travel Days 
+    //-                 .input-value.fs-18 21 days
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Travel to Country 
+    //-                 .input-value.fs-18 UAE
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Travel to City 
+    //-                 .input-value.fs-18 Dubai
+    //-         .col-lg-3 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Travel Category  
+    //-                 .input-value.fs-18 Outside
+    //-         .col-lg-12 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Reason of Travel  
+    //-                 .input-value.fs-18 To attend a business meeting with clients and discuss project updates and future collaboration opportunities.
+    //-         .col-lg-12 
+    //-             .box.p-24 
+    //-                 .heading-sub.fs-18 Attachment 
+    //-                 .attachments
+    //-                     .file
+    //-                         span.icon.file
+    //-                         span.filename.fs-14 Document.pdf
+    //-                         span.icon.view
+    //-                     .separator 
+    //-                     .file
+    //-                         span.icon.file
+    //-                         span.filename.fs-14 Document.pdf
+    //-                         span.icon.view
+   
+
+    if page == "hr-letters-details-with-approvals"
+        .d-flex.justify-content-between.flex-column.flex-md-row
+            .d-flex.flex-column
+                h2.fw-900.text-black.text-nowrap.mb-4.fs-26 Request Information
+                .d-flex.gap-3.mb-32
+                    p.fs-18.text-black.mb-0 Requester Name: 
+                        span.text-black3 Yousef Al-Mansour
+                    p.fs-18.text-black.mb-0 Request ID:
+                        span.text-black3 QFZA195
+                    p.fs-18.text-black.mb-0 Request ID: 
+                        span.text-black3 QFZA-00001
+                    p.fs-18.text-black.mb-0 Request Date:
+                        span.text-black3 13/06/2025
+            .d-flex.flex-column 
+                .d-flex.gap-2.align-items-center.mb-2.justify-content-end
+                    p.fs-18.fw-500.mb-0 Current Status:
+                    button.box-pending.btn.btn-warning.fs-16.fw-500  
+                        |  Pending
+                p.fs-16.text-black.opc-70 Pending with 
+                    span.fw-900 Ahmed bin Saleh
+        .row.services-details-section.gy-4 
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Letter Type
+                    .input-value.fs-18 Official
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Letter Certificate Group 
+                    .input-value.fs-18 Banks
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Letter Certificate Code  
+                    .input-value.fs-18 QNB
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Language 
+                    .input-value.fs-18 Salary Certificate
+            
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Report Type
+                    .input-value.fs-18 Salary Certificate
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Addressed To
+                    .input-value.fs-18 Doha, Qatar
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Arabic Addressed To 
+                    .input-value.fs-18 Doha, Qatar
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Address
+                    .input-value.fs-18 Doha, Qatar
+        
+            .col-lg-12 
+                .box.p-24 
+                    .heading-sub.fs-18 Description 
+                    .input-value.fs-18 Requesting a salary certificate to verify my employment and salary details...
+
+    
+    if page == "schooling-allowances-details-with-approvals"
+        .d-flex.justify-content-between.flex-column.flex-md-row
+            .d-flex.flex-column
+                h2.fw-900.text-black.text-nowrap.mb-4.fs-26 Request Information
+                
+                .d-flex.gap-3.mb-32
+                    p.fs-18.text-black.mb-0 Requester Name: 
+                        span.text-black3 Yousef Al-Mansour
+                    p.fs-18.text-black.mb-0 Request ID:
+                        span.text-black3 QFZA195
+                    p.fs-18.text-black.mb-0 Request ID: 
+                        span.text-black3 QFZA-00001
+                    p.fs-18.text-black.mb-0 Request Date:
+                        span.text-black3 13/06/2025
+            .d-flex.flex-column 
+                .d-flex.gap-2.align-items-center.mb-2.justify-content-end
+                    p.fs-18.fw-500.mb-0 Current Status:
+                    button.box-pending.btn.btn-warning.fs-16.fw-500  
+                        |  Pending
+                p.fs-16.text-black.opc-70 Pending with 
+                    span.fw-900 Ahmed bin Saleh
+        .box-7.p-32.department-details
+            h3.fs-20.text-black.fw-900 Dependent 1 - Information
+            .row.services-details-section.gy-4 
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Academic Year 
+                        .input-value.fs-18 2025–2026
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Dependent’s Name  
+                        .input-value.fs-18 IT 
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 School Name   
+                        .input-value.fs-18 Doha International School
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Class Number 
+                        .input-value.fs-18 Grade 7
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Deserved Amount 
+                        .input-value.fs-18 QAR 18,000
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Invoice/Receipt Number  
+                        .input-value.fs-18 218622210
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Invoice/ Receipt Amount   
+                        .input-value.fs-18 QAR 9,000
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Paid Amount Deserved 
+                        .input-value.fs-18 QAR 9,000
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Semesters 
+                        .input-value.fs-18 Semester 1 & 2
+                .col-lg-9 
+                    .box.p-24 
+                        .heading-sub.fs-18 Attachment 
+                        .attachments
+                            .file
+                                span.icon.file
+                                span.filename.fs-14 Document.pdf
+                                span.icon.view
+                            .separator 
+                            .file
+                                span.icon.file
+                                span.filename.fs-14 Document.pdf
+                                span.icon.view
+                .col-lg-12 
+                    .box.p-24 
+                        .heading-sub.fs-18 Description 
+                        .input-value.fs-18 Requesting a salary certificate to verify my employment and salary details..
+        .box-7.p-32.department-details
+            h3.fs-20.text-black.fw-900.mb-24 Dependent 2 - Information            
+    if page == "permission-requests-details-with-approvals"
+        .d-flex.justify-content-between.flex-column.flex-md-row
+            .d-flex.flex-column
+                h2.fw-900.text-black.text-nowrap.mb-4.fs-26 Request Information
+                .d-flex.gap-3.mb-32
+                    p.fs-18.text-black.mb-0 Requester Name: 
+                        span.text-black3 Yousef Al-Mansour
+                    p.fs-18.text-black.mb-0 Request ID:
+                        span.text-black3 QFZA195
+                    p.fs-18.text-black.mb-0 Request ID: 
+                        span.text-black3 QFZA-00001
+                    p.fs-18.text-black.mb-0 Request Date:
+                        span.text-black3 13/06/2025
+            .d-flex.flex-column 
+                .d-flex.gap-2.align-items-center.mb-2.justify-content-end
+                    p.fs-18.fw-500.mb-0 Current Status:
+                    button.box-pending.btn.btn-warning.fs-16.fw-500  
+                        |  Pending
+                p.fs-16.text-black.opc-70 Pending with 
+                    span.fw-900 Ahmed bin Saleh
+        .row.services-details-section.gy-4 
+            .col-lg 
+                .box.p-24 
+                    .heading-sub.fs-18 Permission Type 
+                    .input-value.fs-18 Sick Leave
+            .col-lg
+                .box.p-24 
+                    .heading-sub.fs-18 Start Time 
+                    .input-value.fs-18 08.00 PM
+            .col-lg 
+                .box.p-24 
+                    .heading-sub.fs-18 End Time  
+                    .input-value.fs-18 12.00 PM
+            .col-lg
+                .box.p-24 
+                    .heading-sub.fs-18 Time Difference
+                    .input-value.fs-18 04 Hours
+            .col-lg
+                .box.p-24 
+                    .heading-sub.fs-18 Permission Date 
+                    .input-value.fs-18 10/10/2025
+        
+        
+            .col-lg-12 
+                .box.p-24 
+                    .heading-sub.fs-18 Reason for Permission  
+                    .input-value.fs-18 I am requesting permission for a short absence from duty to handle an urgent personal matter. I will coordinate with my team to ensure that work continuity is maintained during my brief absence.
+    if page == "travel-requests-details-with-approvals"
+        .d-flex.justify-content-between.flex-column.flex-md-row
+            .d-flex.flex-column
+                h2.fw-900.text-black.text-nowrap.mb-4.fs-26 Request Information
+                .d-flex.gap-3.mb-32
+                    p.fs-18.text-black.mb-0 Requester Name: 
+                        span.text-black3 Yousef Al-Mansour
+                    p.fs-18.text-black.mb-0 Request ID:
+                        span.text-black3 QFZA195
+                    p.fs-18.text-black.mb-0 Request ID: 
+                        span.text-black3 QFZA-00001
+                    p.fs-18.text-black.mb-0 Request Date:
+                        span.text-black3 13/06/2025
+            .d-flex.flex-column 
+                .d-flex.gap-2.align-items-center.mb-2.justify-content-end
+                    p.fs-18.fw-500.mb-0 Current Status:
+                    button.box-pending.btn.btn-warning.fs-16.fw-500  
+                        |  Pending
+                p.fs-16.text-black.opc-70 Pending with 
+                    span.fw-900 Ahmed bin Saleh
+        .row.services-details-section.gy-4 
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Request Type 
+                    .input-value.fs-18 Business
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Start Date  
+                    .input-value.fs-18 10/10/2025
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 End Date   
+                    .input-value.fs-18 10/10/2025
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Course ID 
+                    .input-value.fs-18 54831
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Total Travel Days  
+                    .input-value.fs-18 21
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Travel to Country   
+                    .input-value.fs-18 UAE
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Travel to City   
+                    .input-value.fs-18 Dubai
+            .col-lg-3 
+                .box.p-24 
+                    .heading-sub.fs-18 Travel Category  
+                    .input-value.fs-18 Outside
+        
+            .col-lg-12 
+                .box.p-24 
+                    .heading-sub.fs-18 Description 
+                    .input-value.fs-18 Requesting a salary certificate to verify my employment and salary details..                
+            .col-lg-12 
+                    .box.p-24 
+                        .heading-sub.fs-18 Attachment 
+                        .attachments
+                            .file
+                                span.icon.file
+                                span.filename.fs-14 Document.pdf
+                                span.icon.view
+                            .separator 
+                            .file
+                                span.icon.file
+                                span.filename.fs-14 Document.pdf
+                                span.icon.view
+    if page == "task-management-details-with-approvals"
+            .d-flex.justify-content-between.flex-column.flex-md-row
+                .d-flex.flex-column
+                    h2.fw-900.text-black.text-nowrap.mb-4.fs-26 Request Informationaa
+                    .d-flex.gap-3.mb-32
+                        p.fs-18.text-black.mb-0 Requester Name: 
+                            span.text-black3 Yousef Al-Mansour
+                        p.fs-18.text-black.mb-0 Request ID:
+                            span.text-black3 QFZA195
+                        p.fs-18.text-black.mb-0 Request ID: 
+                            span.text-black3 QFZA-00001
+                        p.fs-18.text-black.mb-0 Request Date:
+                            span.text-black3 13/06/2025
+                .d-flex.flex-column 
+                    .d-flex.align-items-center.mb-2.justify-content-end
+                        .d-flex.align-items-center.gap-2.border-grey-end 
+                            p.mb-0.fs-18.fw-500 Priority Level
+                            .d-flex.align-items-center
+                                    .circle-border-blue
+                                        i.circle-shape.bg-blue(
+                                            style="-webkit-mask:url('assets/images/circle-11.svg') no-repeat center / contain;width:10px;height:10px;")
+                                    .text-blue.px-2 Moderate
+                        .d-flex.align-items-center
+                            p.fs-18.fw-500.mb-0.px-2 Current Status:
+                            button.box-pending.btn.btn-warning.fs-16.fw-500  
+                                |  Pending
+                    //- p.fs-16.text-black.opc-70 Pending with 
+                        span.fw-900 Ahmed bin Saleh
+            .row.services-details-section.gy-4 
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Created by
+                        .input-value.fs-18 Ahmed bin Saleh
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Assigned To 
+                        .input-value.fs-18 Ahmed bin Saleh
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Task Name  
+                        .input-value.fs-18 Finalize New Hiring Guidelines
+                .col-lg-3 
+                    .box.p-24 
+                        .heading-sub.fs-18 Deadline Date 
+                        .input-value.fs-18 30/10/2025
+            
+            
+                .col-lg-12 
+                    .box.p-24 
+                        .heading-sub.fs-18 Task Description
+                        .input-value.fs-18 Review, consolidate, and finalize the new hiring guidelines to ensure alignment with organizational policies and HR best practices. This includes incorporating feedback from relevant stakeholders, standardizing procedures for recruitment and onboarding, and preparing the final version for approval and implementation. The finalized document should clearly outline hiring criteria, approval workflows, required documentation, and compliance requirements.
+
+.row.cardFooter.box-1.mx-0.mt-1.p-32.py-3.mb-2 
+    form.p-0.mb-2
+        .add-comments 
+            textarea#AddressOnLeave.form-control(rows="5" placeholder="Add Comments").leave-box-1
+    .d-flex.gap-2.align-items-center.mb-2.p-0
+        button.box-approval-approve.btn.btn-success.fs-16.fw-500  
+            |  Approve
+        button.box-approval-reject.btn.btn-danger.fs-16.fw-500  
+            |  Reject
+        button.box-approval-pending.btn.btn-danger.fs-16.fw-500  
+            |  Change Request
+
+if page == "task-management-details-with-approvals"
+    .box-1.leave-request.p-32
+        .comment-holder
+            .item
+                .d-flex.gap-3.align-items-center.mb-3
+                    .name-icon.fs-20.bg-blue.text-white.rounded-pill AB
+                    p.mb-0.fs-20.text-black.opc-70.fw-500 Ahmed Bin Fasil
+                    p.mb-0.fs-16.fw-350.text-black.opc-70.time 2 Hours ago
+                p.fs-16.text-black.opc-70.mb-0 Just saw the new policy updates. What do you all think about the changes to vacation time?
+            .item
+                .d-flex.gap-3.align-items-center.mb-3
+                    .name-icon.fs-20.bg-light-blue.text-white.rounded-pill FF
+                    p.mb-0.fs-20.text-black.opc-70.fw-500 Fathima Fida
+                    p.mb-0.fs-16.fw-350.text-black.opc-70.time 2 Hours ago
+                p.fs-16.text-black.opc-70.mb-0 Just saw the new policy updates. What do you all think about the changes to vacation time?
+            .item 
+                .add-comments 
+                    textarea#AddressOnLeave.form-control(rows="5" placeholder="Add Comments").leave-box-1
+            .item 
+                .text-end
+                    button(type="submit" data-bs-toggle="modal" data-bs-target="#CommentModal").comment-btn Add Comment
+.modal.fade#CommentModal.comment-modal(tabindex="-1", aria-labelledby="commentModalLabel", aria-hidden="true")
+    .modal-dialog.modal-dialog-centered
+        .modal-content
+            //- .modal-header
+                //- h1.modal-title.fs-5#commentModalLabel Modal title
+                //- button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+            .modal-body
+                .d-flex.flex-column.gap-4.align-items-center
+                    .fs-20.fw-bold.text-black Important Notice
+                    p.opc-70.text-black.text-center Do not include confidential information. Submitted comments are sent via email notifications.
+            .modal-footer.d-flex.fs-18
+                button.btn.btn-grey1(type="button", data-bs-dismiss="modal").btn-cancel.rounded-pill  Cancel
+                button(type="submit").comment-btn.rounded-pill Add Comment
+
+                        

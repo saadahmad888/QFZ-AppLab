@@ -1,0 +1,33 @@
+.page-padding
+    include ../partials/_breadCrumb
+    if page == "leave-management"
+        include ../partials/_leaveBalances
+    include ../partials/_servicesRequests
+    .modal#approve-request-modal(tabindex="-1").leaveModal
+        .modal-dialog.modal-dialog-centered
+            .modal-content
+                .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                    //- .modalLoader.text-center
+                        .spinner-border(role='status')
+                        p.mt-2 Please wait...                 
+                    .video-container(style="width: 100%; max-width: 600px;")
+                        video.tickVideo(autoplay muted loop playsinline style="width:150px; height:150px; display:block; margin:auto;")
+                            source(src="assets/videos/success-apply-leave.mp4" type="video/mp4")
+                    h5.modal-title.fw-900 Request Approved
+                .modal-footer
+                    button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done 
+    .modal#reject-request-modal(tabindex="-1").leaveModal
+        .modal-dialog.modal-dialog-centered
+            .modal-content
+                .modal-body.d-flex.justify-content-center.flex-column.align-items-center
+                    //- .modalLoader.text-center
+                        .spinner-border(role='status')
+                        p.mt-2 Please wait...
+                    .video-container(style="width: 100%; max-width: 600px;")
+                        video.tickVideo(autoplay muted loop playsinline style="width:120px; height:120px; display:block; margin:auto;")
+                            source(src="assets/videos/failed.mp4" type="video/mp4")
+                    h5.modal-title.fw-900 Request Rejected
+                .modal-footer
+                    button.btn.btn-blue.rounded-pill(type="button" data-bs-dismiss="modal").fw-900 Done 
+    include ../partials/_pagination
+    include ../partials/_footer

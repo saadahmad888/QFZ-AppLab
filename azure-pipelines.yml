@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool: Default
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(build.sourcesDirectory)'
+    includeRootFolder: false
+- script: pwd
+  displayName: 'echo $(build.sourcesDirectory)'
+- script: pwd
+  displayName: 'Source'
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'filePath'
+    scriptPath: '/home/appadmin/myagent/c.py'
+    arguments: '$(build.sourcesDirectory)/ projects/QFZ-html/'
+    pythonInterpreter: 'python3'

@@ -1,0 +1,80 @@
+.custom-pagination {
+    display: flex;
+    // flex-wrap: wrap;
+    gap: 8px;
+
+    .page-item {
+        .page-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid #DFE3E8;
+            background: #FFF;
+            color: #212B36;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s;
+            font-weight: 900;
+
+            &:hover {
+                border: 1px solid #DFE3E8;
+            }
+        }
+        .page-link:focus  {
+            box-shadow: none;
+        }
+        &.active .page-link {
+            border-radius: 50%;
+            border: 1px solid $blue;
+            background: #FFF;
+            color: $blue;
+        }
+
+        &.prev .page-link {
+            background: #fff;
+            background-image: url('../images/pagination-arrow.svg');
+            opacity: 0.5;
+            transform: scaleX(-1);
+            background-repeat: no-repeat;
+            background-position: center !important;
+            background-size: 30px 30px;
+            text-indent: -9999px;
+            border: 1px solid #919EAB;
+            &:hover {
+            background:  #919EAB;
+            opacity: 50%;
+            background-image: url('../images/pagination-arrow.svg');
+          }
+           
+
+            [dir="rtl"] & {
+                transform: scaleX(1);
+            }
+
+        }
+
+        &.next .page-link {
+            background: #fff;
+            background-image: url('../images/pagination-arrow.svg');
+            background-repeat: no-repeat;
+            background-position: center !important;
+            background-size: 30px 30px;
+            text-indent: -9999px;
+            opacity: 0.5;
+            border: 1px solid #919EAB;
+          &:hover {
+            background:  #919EAB;
+            opacity: 50%;
+            background-image: url('../images/pagination-arrow.svg');
+          }
+
+            [dir="rtl"] & {
+                transform: scaleX(-1);
+            }
+
+        }
+    }
+}

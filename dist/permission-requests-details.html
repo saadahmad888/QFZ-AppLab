@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="assets/css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <title>QFZ Permission Requests Details Page</title>
+  </head>
+  <body class="bg-grey">
+    <header class="header bg-grey4">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between"> <img class="img-fluid main-logo" src="assets/images/logo-black.svg">
+          <div class="d-flex gap-2 gap-lg-3 align-items-center"><a class="inline-block pending-approvals-btn position-relative" href="#"> <span class="rounded-pill badge-pending-approvals">7<span class="visually-hidden">unread msg</span></span><span class="d-inline-flex"><i class="size-28 d-inline-block" style="background:url(assets/images/checklist-header.svg) center no-repeat"></i></span></a>
+            <button class="btn btn-white notification-btn py-10 position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#notification" aria-controls="notification"><span class="rounded-pill badge-notification">7<span class="visually-hidden">unread msg</span></span><span class="d-inline-flex"><i class="size-28 d-inline-block" style="background:url(assets/images/notification-bell.svg) center no-repeat"></i></span></button>
+            <div class="offcanvas offcanvas-end notification-canvas" tabindex="-1" id="notification" aria-labelledby="notificationLabel">
+              <div class="offcanvas-header">
+                <button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <h1 class="fs-40 offcanvas-title">Notification</h1>
+                <p class="fs-20 text-black-light mb-3">You have <span class="fw-900">3</span> new notifications</p>
+                <form class="d-flex form-request mb-3 w-100" role="search">
+                  <input class="form-control rounded-pill pe-5 w-100" type="search" placeholder="Search Request ID..." aria-label="Search"><span class="bg-blue search-btn d-flex align-items-center justify-content-center"><i class="search-icon d-inline-flex" style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;"> </i></span>
+                </form>
+                <div class="notification-holder">
+                  <div class="notification-details d-flex justify-content-between mb-32">
+                    <div class="div d-flex gap-3">  
+                      <div class="read-box">Unread</div>
+                      <div class="unread-box">Read</div>
+                    </div>
+                    <div class="filter-box">Filter<i class="size-28 d-inline-block" style="background:url(assets/images/sort.svg) center no-repeat"></i></div>
+                  </div>
+                  <div class="notification-list"> 
+                    <div class="box-unread">
+                      <h6 class="fs-16 fw-900 heading">Leave Request Approved</h6>
+                      <p class="fs-14 fw-350 reason">Your leave request from Sep 20–23 was approved by<span class="fw-900 text-black-light"> Manager Ali.</span></p>
+                      <p class="fs-14 fw-350 time"> 2 minutes ago</p>
+                      <div class="status-approved"> <i class="size-28 d-inline-block" style="background:url(assets/images/tick.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-unread">
+                      <h6 class="fs-16 fw-900 heading">All-Staff Meeting</h6>
+                      <p class="fs-14 fw-350 reason">Don’t forget: All-hands staff meeting today at 2:00 PM.</p>
+                      <p class="fs-14 fw-350 time"> 5 minutes ago</p>
+                      <div class="status-important"><i class="size-28 d-inline-block" style="background:url(assets/images/important.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-unread">
+                      <h6 class="fs-16 fw-900 heading">Leave Request Rejected</h6>
+                      <p class="fs-14 fw-350 reason">Your leave request from Sep 20–23 was <span class="fw-900 text-black-light">rejected </span> by <span class="fw-900 text-black-light">Manager Ali.</span> Reason: “Team workload high.”</p>
+                      <p class="fs-14 fw-350 time"> 1 hours ago</p>
+                      <div class="status-rejected"> <i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Task Due Tomorrow</h6>
+                      <p class="fs-14 fw-350 reason">Task “Prepare HR Survey Report” is due <span class="fw-900 text-black-light">tomorrow at 4 PM.</span></p>
+                      <p class="fs-14 fw-350 time">	Today at 11:15 AM</p>
+                      <div class="status-important-light"><i class="size-28 d-inline-block" style="background:url(assets/images/important.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Travel Request Rejected</h6>
+                      <p class="fs-14 fw-350 reason">Travel request for Oct 10–15 was rejected. Reason: “Budget exceeded.”</p>
+                      <p class="fs-14 fw-350 time"> Today at 09:30 AM</p>
+                      <div class="status-rejected-light"><i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Schooling Allowance Approved</h6>
+                      <p class="fs-14 fw-350 reason">Schooling allowance for Zaid Ahmed <span class="fw-900 text-black-light">Zaid Ahmed</span>has been approved.</p>
+                      <p class="fs-14 fw-350 time"> Today at 07:49 AM</p>
+                      <div class="status-approved-light"><i class="size-28 d-inline-block" style="background:url(assets/images/tick.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Schooling Allowance Rejected</h6>
+                      <p class="fs-14 fw-350 reason">Claim rejected. Reason: “Missing receipt attachment.”</p>
+                      <p class="fs-14 fw-350 time"> Yesterday at 06:42 PM</p>
+                      <div class="status-rejected-light"><i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Action Required – Attendance Correction</h6>
+                      <p class="fs-14 fw-350 reason">Your attendance correction request for Aug 31 is pending HR review.</p>
+                      <p class="fs-14 fw-350 time"> Yesterday at 04:13 PM</p>
+                      <div class="status-rejected-light"><i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Action Required – Attendance Correction</h6>
+                      <p class="fs-14 fw-350 reason">Your attendance correction request for Aug 31 is pending HR review.</p>
+                      <p class="fs-14 fw-350 time"> Yesterday at 04:13 PM</p>
+                      <div class="status-rejected-light"><i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                    <div class="box-read">
+                      <h6 class="fs-16 fw-900 heading">Action Required – Attendance Correction</h6>
+                      <p class="fs-14 fw-350 reason">Your attendance correction request for Aug 31 is pending HR review.</p>
+                      <p class="fs-14 fw-350 time"> Yesterday at 04:13 PM</p>
+                      <div class="status-rejected-light"><i class="size-28 d-inline-block" style="background:url(assets/images/close-2.svg) center no-repeat"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="lang-switcher btn btn-white rounded-pill p-2 p-lg-3 d-flex gap-0 gap-lg-2 align-items-center"><span class="d-inline-flex"><i class="size-22x23 d-inline-block" style="background:url(assets/images/qatar-flag.svg) center no-repeat"></i></span>
+              <p class="d-none d-lg-block fw-500 fs-18 mb-0">العربية </p>
+              <div class="div dropdown"></div>
+            </button>
+            <button class="profile-switcher btn btn-white rounded-pill p-1 d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="initials size-49x48">AB</span><span class="fw-500 fs-18"><i class="dropdown-arrow d-inline-block size-30x12" style="background:url('assets/images/dropdown-arrow.svg') no-repeat center; transition: transform 0.3s ease;"></i></span></button>
+            <ul class="dropdown-menu profile-dropdown">
+              <li><a class="dropdown-item text-black fs-18 fw-350 py-2 d-flex justify-content-between align-items-center" href="#"><span>Profile</span><i class="menu-arrow" style="background:url('assets/images/logout-arrow.svg') no-repeat center; width:12px; height:12px; display:inline-block; margin-left:8px;"></i></a></li>
+              <li><a class="dropdown-item text-black fs-18 fw-350 py-2 d-flex justify-content-between align-items-center" href="#"><span>Logout</span><i class="menu-arrow" style="background:url('assets/images/logout-arrow.svg') no-repeat center; width:12px; height:12px; display:inline-block; margin-left:8px;"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="page-padding">
+      <div class="bread-crumb-holder d-flex mb-64 justify-content-between align-items-lg-center flex-column flex-lg-row align-items-start">
+        <div class="d-flex align-items-center gap-2 gap-lg-4 mb-2">
+          <button class="btn p-0 radius-50 size-64 d-flex align-items-center justify-content-center"><i class="size-24 bg-black d-inline-flex" style="-webkit-mask-image:url('assets/images/arrow-start.svg'); -webkit-mask-repeat:no-repeat; -webkit-mask-position:center;"></i></button>
+          <div class="d-flex flex-column">
+            <h1 class="text-black fs-40 fw-900">Permission Requests Details</h1>
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+              <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a class="text-black opc-50 fs-18 fw-350 text-decoration-none" href="#">Home</a></li>
+                <li class="breadcrumb-item align-items-center d-flex text-black" aria-current="page"><a class="text-black opc-50 fs-18 fw-350 text-decoration-none" href="#">Permission Requests</a></li>
+                <li class="breadcrumb-item active text-blue fs-18 fw-500 d-flex align-items-center" aria-current="page">Permission Request Details</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="box-1 leave-request p-32">
+        <div class="d-flex justify-content-between flex-column flex-md-row">
+          <div class="d-flex flex-column">
+            <h2 class="fw-900 text-black mb-4 fs-26">Request Information</h2>
+            <div class="d-flex gap-3 mb-32">
+              <p class="fs-18 text-black mb-0">Request ID: <span class="text-black3">QFZA-00001</span></p>
+              <p class="fs-18 text-black mb-0">Request Date:<span class="text-black3">13/06/2025</span></p>
+            </div>
+          </div>
+          <div class="d-flex flex-column"> 
+            <div class="d-flex gap-2 align-items-center mb-2 justify-content-end">
+              <p class="fs-18 fw-500 mb-0">Current Status:</p>
+              <button class="box-pending btn btn-warning fs-16 fw-500">
+                  Pending</button>
+            </div>
+            <p class="fs-16 text-black opc-70">Pending with <span class="fw-900">Ahmed bin Saleh</span></p>
+          </div>
+        </div>
+        <div class="row services-details-section gy-4"> 
+          <div class="col-xxl col-md-6"> 
+            <div class="box p-24"> 
+              <div class="heading-sub fs-18">Permission Type </div>
+              <div class="input-value fs-18">Sick Leave</div>
+            </div>
+          </div>
+          <div class="col-xxl col-md-6"> 
+            <div class="box p-24"> 
+              <div class="heading-sub fs-18">Violation Type </div>
+              <div class="input-value fs-18">Sick Leave</div>
+            </div>
+          </div>
+          <div class="col-xxl col-md-6">
+            <div class="box p-24"> 
+              <div class="heading-sub fs-18">Start Time </div>
+              <div class="input-value fs-18">08.00 PM</div>
+            </div>
+          </div>
+          <div class="col-xxl col-md-6"> 
+            <div class="box p-24"> 
+              <div class="heading-sub fs-18">End Time  </div>
+              <div class="input-value fs-18">12.00 PM</div>
+            </div>
+          </div>
+          <div class="col-xxl col-md-6">
+            <div class="box p-24"> 
+              <div class="heading-sub fs-18">Time Difference</div>
+              <div class="input-value fs-18">04 Hours</div>
+            </div>
+          </div>
+          <div class="col-xxl col-md-6">
+            <div class="box p-24"> 
+              <div class="heading-sub fs-18">Permission Date </div>
+              <div class="input-value fs-18">10/10/2025</div>
+            </div>
+          </div>
+          <div class="col-lg-12"> 
+            <div class="box p-24"> 
+              <div class="heading-sub fs-18">Reason for Permission  </div>
+              <div class="input-value fs-18">I am requesting permission for a short absence from duty to handle an urgent personal matter. I will coordinate with my team to ensure that work continuity is maintained during my brief absence.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer py-3 py-lg-24 mt-32">
+        <h4 class="fs-18 fw-350 text-black opc-60"> <a class="text-black opc-60 text-decoration-none" href="#">Privacy Policy</a><span class="text-black opc-60">&nbsp;|&nbsp;</span><a class="text-black opc-60 text-decoration-none" href="#">Terms and Conditions</a><span class="text-black opc-60">&nbsp;|&nbsp;</span><span class="text-black opc-60">© 2025 Qatar Free Zones Authority. All Rights Reserved.</span></h4>
+      </div>
+    </div>
+    <div class="chatbot-container">
+      <button class="border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasChatbot" aria-controls="offcanvasChatbot"><img class="img-fluid main-chat-logo" src="assets/images/chatbot-icon.svg"></button>
+      <div class="offcanvas offcanvas-end chatbot-offcanvas" tabindex="-1" id="offcanvasChatbot" aria-labelledby="offcanvasChatbotLabel" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasChatbotLabel"> </h5>
+          <div class="d-flex offcanvas-btn-wrap"> 
+            <button class="btn-mimimise" type="button" aria-label=""></button>
+            <button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="offcanvas-body pt-0">
+          <div class="welcome-msg"><img class="img-fluid mb-64" src="assets/images/chatbot-icon.svg" width="80" height="76">
+            <h6 class="fw-350 opc-80 fs-24 mb-24">Welcome back! <span class="fw-900">Yousef Al-Mansour</span></h6>
+            <h1 class="fs-40 mb-56">How may I help you today?</h1>
+            <button class="get-started-btn btn fs-18">Get Started</button>
+            <div class="continue-msg">
+              <div class="d-flex align-items-center"><i class="d-inline-flex" style="background:url(assets/images/suggestion-container.svg) center no-repeat;width:50px;height:50px;background-size:50px;"></i>
+                <h6 class="fs-16 fw-500">Terms and Conditions</h6>
+              </div>
+              <p class="fw-350 fs-16">Qatar Free Zones Authority (QFZ) does not warrant the accuracy, reliability or completeness of any information provided by the QFZ Chatbot and assumes no liability or responsibility whatsoever for any errors or omissions in such information. The use of the QFZ Chatbot is at your own risk. The information you input into the QFZ Chatbot will be logged, stored, and used for quality and training purposes. Any personal information or confidential data inputted will be at your own risk; using personal information or confidential data should be avoided.</p>
+              <button class="accept-continue-btn btn fs-18 fw-500">Accept and Continue</button>
+            </div>
+          </div>
+          <div class="hello">
+            <div class="chatbot-window-wrapper">
+              <div class="chat-window">
+                <div class="chat-message bot fs-16">
+                  <p>Hi there! How can I assist you today?</p>
+                </div>
+                <div class="chat-message user fs-16">
+                  <p>I want to apply for leave next week</p>
+                </div>
+                <div class="chat-message bot fs-16">
+                  <p>Sure! What are the start and end dates?</p>
+                </div>
+                <div class="chat-message user fs-16">
+                  <p>September 20 to September 23</p>
+                </div>
+                <div class="chat-message bot fs-16">
+                  <p>Got it. Reason for leave?</p>
+                </div>
+                <div class="chat-message bot fs-16"> 
+                  <div class="spinner-border text-white" role="status"><span class="visually-hidden">Loading...</span></div>
+                </div>
+                <div class="chat-message user fs-16">
+                  <p>Some personal reasons c</p>
+                </div>
+                <div class="chat-message bot fs-16">
+                  <div id="Cont1"></div>
+                  <div id="Cont2"></div>
+                  <div id="Cont3"></div>
+                  <div id="Cont4"></div>
+                  <div id="Cont5"> </div>
+                </div>
+                <div class="chat-message bot fs-16">
+                  <div id="Cont6"></div>
+                  <div id="Cont8"></div>
+                  <div id="Cont9"></div>
+                  <div id="Cont11"> </div>
+                </div>
+                <div class="chat-message bot fs-16"> 
+                  <p>Atachments
+                    <div class="chat-attachment-wrapper-bot">
+                      <div class="chat-attachment-list" href="#">
+                        <div class="chat-attachment"> 
+                          <div class="d-flex gap-2"><img class="img-fluid" src="assets/images/pdf-image.svg">
+                            <div class="d-flex flex-column">
+                              <p>Document Name</p>
+                              <div class="size">5.3 mb</div>
+                            </div>
+                          </div>
+                          <button class="btn"><img class="img-fluid" src="assets/images/download-icon.svg"></button>
+                        </div>
+                      </div>
+                      <div class="chat-attachment-list" href="#">
+                        <div class="chat-attachment"> 
+                          <div class="d-flex gap-2"><img class="img-fluid" src="assets/images/pdf-image.svg">
+                            <div class="d-flex flex-column">
+                              <p>Document Name</p>
+                              <div class="size">5.3 mb</div>
+                            </div>
+                          </div>
+                          <button class="btn"><img class="img-fluid" src="assets/images/download-icon.svg"></button>
+                        </div>
+                      </div>
+                      <div class="chat-attachment-list" href="#">
+                        <div class="chat-attachment"> 
+                          <div class="d-flex gap-2"><img class="img-fluid" src="assets/images/pdf-image.svg">
+                            <div class="d-flex flex-column">
+                              <p>Document Name</p>
+                              <div class="size">5.3 mb</div>
+                            </div>
+                          </div>
+                          <button class="btn"><img class="img-fluid" src="assets/images/download-icon.svg"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </p>
+                </div>
+                <div class="chat-message user fs-16">
+                  <p>Please find the attached document for your reference.
+                    <div class="chat-attachment-wrapper"><a class="chat-attachment-list" href="#">
+                        <div class="chat-attachment"> <img class="img-fluid" src="assets/images/document-text-chat.svg">
+                          <div class="d-flex flex-column">
+                            <p>Document Name</p>
+                            <div class="size">5.3 mb</div>
+                          </div>
+                        </div></a><a class="chat-attachment-list" href="#">
+                        <div class="chat-attachment"> <img class="img-fluid" src="assets/images/document-text-chat.svg">
+                          <div class="d-flex flex-column">
+                            <p>Document Name</p>
+                            <div class="size">5.3 mb</div>
+                          </div>
+                        </div></a><a class="chat-attachment-list" href="#">
+                        <div class="chat-attachment"> <img class="img-fluid" src="assets/images/document-text-chat.svg">
+                          <div class="d-flex flex-column">
+                            <p>Document Name</p>
+                            <div class="size">5.3 mb</div>
+                          </div>
+                        </div></a><a class="chat-attachment-list" href="#">
+                        <div class="chat-attachment"> <img class="img-fluid" src="assets/images/document-text-chat.svg">
+                          <div class="d-flex flex-column">
+                            <p>Document Name</p>
+                            <div class="size">5.3 mb</div>
+                          </div>
+                        </div></a><a class="chat-attachment-list" href="#">
+                        <div class="chat-attachment"> <img class="img-fluid" src="assets/images/document-text-chat.svg">
+                          <div class="d-flex flex-column">
+                            <p>Document Name</p>
+                            <div class="size">5.3 mb</div>
+                          </div>
+                        </div></a><a class="chat-attachment-list" href="#">
+                        <div class="chat-attachment"> <img class="img-fluid" src="assets/images/document-text-chat.svg">
+                          <div class="d-flex flex-column">
+                            <p>Document Name</p>
+                            <div class="size">5.3 mb                              </div>
+                          </div>
+                        </div></a></div>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="chat-footer">
+              <div class="uploaded-files" id="filePreview"></div>
+              <div class="input-wrapper">
+                <label class="plus-btn" for="fileInput"></label>
+                <input type="file" id="fileInput" multiple hidden>
+                <input class="chat-input" placeholder="Type here">
+                <button class="send-btn" type="submit"><img src="assets/images/footer-send-btn.svg" width="50" height="50"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="importmap">
+      {
+          "imports": {
+              "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+              "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+          }
+      }
+    </script>
+    <script type="module">
+      import { Popover } from 'bootstrap';
+      //- new Popover(document.getElementById('popoverButton'))
+    </script>
+    <script src="assets/js/select2/select2-subpages.js"></script>
+    <script src="assets/js/date-time-picker/date-time.js"></script>
+    <script src="assets/js/file-upload.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="assets/js/chatbot.js"></script>
+    <script src="assets/js/markdown.js"></script>
+    <script src="assets/js/markdown-custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </body>
+</html>

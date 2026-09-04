@@ -1,0 +1,160 @@
+@use "sass:math";
+
+@function radius($ts, $te, $be, $bs) {
+    @if $dir == ltr {
+        @return $ts $te $be $bs;
+    }
+    @else {
+        @return $te $ts $bs $be;
+    }
+}
+@each $state in map-keys($color-map) {
+    #{'.alert-'+$state} {
+      --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text);
+      --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+      --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+      --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text);
+    }
+}
+@each $name, $color in $color-map {
+    #{'.bg-'+$name} {
+        background: $color !important;
+    }
+    #{'.btn-'+$name} {
+        background: $color;
+        border-color: $color;
+        &:hover, &:focus, &:active {
+            background: rgba($color, 0.8);
+            border-color: $color;
+        }
+    }
+    #{'.btn-outline-'+$name} {
+        background: transparent;
+        border-color: $color;
+        color: $color;
+        &:hover, &:focus, &:active {
+            background: rgba($color, 0.8);
+            border-color: $color;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+    #{'.text-'+$name} {
+        color: $color !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@function _num($v) {
+    @if type-of($v) !='number' {
+        @error "_num(): expected number, got #{type-of($v)}";
+    }
+
+    @return if(unit($v)=="", $v, math.div($v, 1px));
+}
+
+@function _len($v) {
+    @if type-of($v) !='number' {
+        @error "_len(): expected number, got #{type-of($v)}";
+    }
+
+    @return if(unit($v)=="", $v * 1px, $v);
+}
+
+@function fluid-value($min, $max, $vmin, $vmax) {
+    $minN: _num($min);
+    $maxN: _num($max);
+    $v1: _num($vmin);
+    $v2: _num($vmax);
+
+    @if $v1 ==$v2 {
+        @error "fluid-value(): vmin and vmax must differ.";
+    }
+
+    $m: math.div(($maxN - $minN), ($v2 - $v1));
+    $b: $minN - $m * $v1;
+
+    @return clamp(_len($min), #{$b}px + #{ $m * 100 }vw, _len($max));
+}
+
+@mixin _fluid-steps-one($prop, $vals, $bps) {
+    $nVals: length($vals);
+    $nBps: length($bps);
+
+    @if $nVals < 2 or $nVals >4 {
+        @error "fluid-steps(): $vals must have 2–4 values.";
+    }
+
+    @if $nBps < 2 {
+        @error "fluid-steps(): $bps must have ≥2 breakpoints.";
+    }
+
+    $bp1: _len(nth($bps, 1));
+    $bpL: _len(nth($bps, $nBps));
+
+    @if _num($bp1)>=_num($bpL) {
+        @error "fluid-steps(): breakpoints must be ascending.";
+    }
+
+    @if $nVals ==2 {
+        $v1: nth($vals, 1);
+        $v2: nth($vals, 2);
+        #{$prop}: fluid-value($v1, $v2, $bp1, $bpL);
+
+    }
+
+    @else if $nVals ==3 {
+        $v1: nth($vals, 1);
+        $v2: nth($vals, 2);
+        $v3: nth($vals, 3);
+        $bpM: _len(if($nBps >=3, nth($bps, 2), math.div((_num($bp1) + _num($bpL)), 2) * 1px));
+
+        #{$prop}: fluid-value($v1, $v2, $bp1, $bpM);
+
+        @media (min-width: #{$bpM}) {
+            #{$prop}: fluid-value($v2, $v3, $bpM, $bpL);
+        }
+
+    }
+
+    @else {
+        $v1: nth($vals, 1);
+        $v2: nth($vals, 2);
+        $v3: nth($vals, 3);
+        $v4: nth($vals, 4);
+
+        @if $nBps < 4 {
+            @error "fluid-steps(): 4 values need ≥4 breakpoints (got #{$nBps}).";
+        }
+
+        $bp2: _len(nth($bps, 2));
+        $bp3: _len(nth($bps, 3));
+
+        #{$prop}: fluid-value($v1, $v2, $bp1, $bp2);
+
+        @media (min-width: #{$bp2}) {
+            #{$prop}: fluid-value($v2, $v3, $bp2, $bp3);
+        }
+
+        @media (min-width: #{$bp3}) {
+            #{$prop}: fluid-value($v3, $v4, $bp3, $bpL);
+        }
+    }
+}
+
+@mixin fluid-steps($props, $vals, $bps: (320px, 768px, 1200px, 1920px)) {
+    $props-list: if(type-of($props)=='list', $props, ($props, ));
+
+    @each $prop in $props-list {
+        @include _fluid-steps-one($prop, $vals, $bps);
+    }
+}

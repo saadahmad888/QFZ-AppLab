@@ -1,0 +1,119 @@
+.services-list-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+  gap: 20px;
+  justify-content: start;
+
+  .services-list {
+    display: flex;
+    width: 158px;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 16px;
+    border: 1px solid $white;
+    background: $white;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(34px);
+
+    h4 {
+      color: $black1;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+    }
+
+  }
+
+  .apply-leave-btn {
+    display: flex;
+    padding: 5.738px;
+    gap: 9.18px;
+    position: absolute;
+    inset-inline-end: 16px;
+    top: 16px;
+    border-radius: 50%;
+    background: linear-gradient(136deg, rgba(47, 88, 165, 0.12) 19.06%, rgba(4, 160, 197, 0.16) 114.52%);
+    box-shadow: 0 2.754px 10.948px 0 rgba(0, 0, 0, 0.05);
+
+    [dir="rtl"] & {
+      transform: scaleX(-1);
+    }
+  }
+
+  @media (min-width: 1700px) and (max-width: 1840px) {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+
+    .services-list {
+      width: 150px;
+    }
+
+    .services-list h4 {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 1548px) and (max-width: 1699.99px) {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+
+    .services-list {
+      width: 135px;
+    }
+
+    .services-list h4 {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 1440px) and (max-width: 1547.99px) {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+
+    .services-list {
+      width: 120px;
+    }
+
+    .services-list h4 {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 1386px) and (max-width: 1439.99px) {
+    grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+
+    .services-list {
+      width: 110px;
+    }
+
+    .services-list h4 {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 1245px) and (max-width: 1385.99px) {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+
+    .services-list {
+      width: 100px;
+    }
+
+    .services-list h4 {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 1244.99px) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .services-list {
+      width: 130px;
+    }
+
+    .services-list h4 {
+      font-size: 12px;
+    }
+  }
+}

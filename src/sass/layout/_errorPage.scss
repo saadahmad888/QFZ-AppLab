@@ -1,0 +1,31 @@
+.errorpage-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 0px);
+
+  .errorpage-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+  }
+
+  @media (min-width: 992px) and (max-width: 1700px) {
+    .mb-80 {
+      margin-bottom: 20px;
+    }
+
+    .mb-32 {
+      margin-bottom: 12px;
+    }
+
+    .mb-40 {
+      margin-bottom: 12px;
+    }
+
+    .errorpage-box img {
+      max-width: 500px;
+    }
+  }
+}

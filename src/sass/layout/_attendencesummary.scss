@@ -1,0 +1,86 @@
+.attendance-summary {
+
+  h2 {
+    color: $black2;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  p {
+    color: $black;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 18px;
+    opacity: 60%;
+  }
+
+  .atten-summary-btn {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    position: absolute;
+    inset-inline-end: 24px;
+    top: 32px;
+    border-radius: 40px;
+    border: 1.667px solid #fff;
+    background: linear-gradient(136deg,
+        rgba(255, 255, 255, 0.4) 19.06%,
+        rgba(255, 255, 255, 0) 114.52%);
+    box-shadow: 0 5px 6.667px 0 rgba(0, 0, 0, 0.05);
+
+    @include media-breakpoint-down(md) {
+      width: 35px;
+      height: 35px;
+      inset-inline-end: 16px;
+      top: 10px;
+    }
+
+    [dir="rtl"] & {
+      transform: scaleX(-1);
+    }
+
+    i {
+      mask-size: 31px;
+      -webkit-mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+
+      @include media-breakpoint-down(md) {
+        mask-size: 25px;
+      }
+    }
+  }
+
+  .days-present,
+  .days-absent,
+  .days-late {
+    h3 {
+      color: $black;
+      font-style: normal;
+      font-weight: 350;
+      line-height: 18px;
+      opacity: 0.6;
+    }
+
+  }
+
+  .days-present,
+  .days-absent,
+  .days-late {
+    .progress-bar {
+      border-radius: 100px;
+      height: 8px;
+    }
+
+    .progress {
+      height: auto;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 15px;
+  }
+}

@@ -1,0 +1,166 @@
+.chatbot-container
+    button.border-0.bg-transparent(type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasChatbot" aria-controls="offcanvasChatbot")
+        img(src="assets/images/chatbot-icon.svg").img-fluid.main-chat-logo
+    .offcanvas.offcanvas-end.chatbot-offcanvas(tabindex='-1', id='offcanvasChatbot', aria-labelledby='offcanvasChatbotLabel'  data-bs-backdrop="static"
+     data-bs-keyboard="false")
+        .offcanvas-header
+            h5.offcanvas-title#offcanvasChatbotLabel 
+            .d-flex.offcanvas-btn-wrap 
+                button.btn-mimimise(type='button', aria-label='')
+                button.btn-close(type='button', data-bs-dismiss='offcanvas', aria-label='Close')
+            
+        .offcanvas-body.pt-0
+            .welcome-msg
+                img(src="assets/images/chatbot-icon.svg" width="80" height="76").img-fluid.mb-64
+                h6.fw-350.opc-80.fs-24.mb-24 Welcome back! 
+                    span.fw-900 Yousef Al-Mansour
+                h1.fs-40.mb-56 How may I help you today?
+                button.get-started-btn.btn.fs-18 Get Started
+                .continue-msg
+                    .d-flex.align-items-center
+                        i.d-inline-flex(style="background:url(assets/images/suggestion-container.svg) center no-repeat;width:50px;height:50px;background-size:50px;")
+                        h6.fs-16.fw-500 Terms and Conditions
+                        
+                    p.fw-350.fs-16 Qatar Free Zones Authority (QFZ) does not warrant the accuracy, reliability or completeness of any information provided by the QFZ Chatbot and assumes no liability or responsibility whatsoever for any errors or omissions in such information. The use of the QFZ Chatbot is at your own risk. The information you input into the QFZ Chatbot will be logged, stored, and used for quality and training purposes. Any personal information or confidential data inputted will be at your own risk; using personal information or confidential data should be avoided.
+                    button.accept-continue-btn.btn.fs-18.fw-500 Accept and Continue
+            .hello
+                .chatbot-window-wrapper
+                    .chat-window
+                        .chat-message.bot.fs-16
+                            p Hi there! How can I assist you today?
+                        .chat-message.user.fs-16
+                            p I want to apply for leave next week
+
+                        //- .chat-message.bot.fs-16
+                            .suggestions
+                                .d-flex.gap-2.mb-3.align-items-center
+                                    .icon-box
+                                        img(src="assets/images/suggestion-icon.svg" width="15" height="15")
+                                    p.fw-500.fs-16.text-white suggestions
+                                ul
+                                    li I want to apply for leave next week
+                                    li What’s the overtime policy?
+                                    li Did I punch in today?
+                        .chat-message.bot.fs-16
+                            p Sure! What are the start and end dates?
+                        .chat-message.user.fs-16
+                            p September 20 to September 23
+                        .chat-message.bot.fs-16
+                            p Got it. Reason for leave?
+                        .chat-message.bot.fs-16 
+                            .spinner-border.text-white(role="status")
+                                span.visually-hidden Loading...
+                        .chat-message.user.fs-16
+                            p Some personal reasons c
+                        
+                        .chat-message.bot.fs-16
+                            #Cont1
+                            #Cont2
+                            #Cont3
+                            #Cont4
+                            #Cont5 
+                        .chat-message.bot.fs-16
+                            #Cont6
+                            #Cont8
+                            #Cont9
+                            #Cont11  
+                        .chat-message.bot.fs-16 
+                             p Atachments
+                                .chat-attachment-wrapper-bot
+                                    .chat-attachment-list(href="#")
+                                        .chat-attachment 
+                                            .d-flex.gap-2
+                                                img(src="assets/images/pdf-image.svg").img-fluid
+                                                .d-flex.flex-column
+                                                    p Document Name
+                                                    .size 5.3 mb
+                                            button.btn
+                                                img(src="assets/images/download-icon.svg").img-fluid
+                                    .chat-attachment-list(href="#")
+                                        .chat-attachment 
+                                            .d-flex.gap-2
+                                                img(src="assets/images/pdf-image.svg").img-fluid
+                                                .d-flex.flex-column
+                                                    p Document Name
+                                                    .size 5.3 mb
+                                            button.btn
+                                                img(src="assets/images/download-icon.svg").img-fluid
+                                    .chat-attachment-list(href="#")
+                                        .chat-attachment 
+                                            .d-flex.gap-2
+                                                img(src="assets/images/pdf-image.svg").img-fluid
+                                                .d-flex.flex-column
+                                                    p Document Name
+                                                    .size 5.3 mb
+                                            button.btn
+                                                img(src="assets/images/download-icon.svg").img-fluid
+                                //-    .chat-attachment-list(href="#")
+                                //-         .chat-attachment 
+                                //-             .d-flex.gap-2
+                                //-                 img(src="assets/images/pdf-image.svg").img-fluid
+                                //-                 .d-flex.flex-column
+                                //-                     p Document Name
+                                //-                     .size 5.3 mb
+                                //-             .d-flex.gap-2.align-items-center
+                                //-                 button.btn
+                                //-                     img(src="assets/images/close-btn-attachment.svg").img-fluid
+                                //-                 .spinner-border.text-white(role="status")
+                                //-                     span.visually-hidden Loading...
+                                    //- a.chat-attachment-list(href="#")
+                                        .chat-attachment 
+                                            img(src="assets/images/document-text-chat.svg").img-fluid
+                                            .d-flex.flex-column
+                                                p Document Name
+                                                .size 5.3 mb
+                                                              
+                
+                        .chat-message.user.fs-16
+                            p Please find the attached document for your reference.
+                                .chat-attachment-wrapper
+                                    a.chat-attachment-list(href="#")
+                                        .chat-attachment 
+                                            img(src="assets/images/document-text-chat.svg").img-fluid
+                                            .d-flex.flex-column
+                                                p Document Name
+                                                .size 5.3 mb
+                                    a.chat-attachment-list(href="#")
+                                        .chat-attachment 
+                                            img(src="assets/images/document-text-chat.svg").img-fluid
+                                            .d-flex.flex-column
+                                                p Document Name
+                                                .size 5.3 mb
+                                    a.chat-attachment-list(href="#")
+                                        .chat-attachment 
+                                            img(src="assets/images/document-text-chat.svg").img-fluid
+                                            .d-flex.flex-column
+                                                p Document Name
+                                                .size 5.3 mb
+                                    a.chat-attachment-list(href="#")
+                                        .chat-attachment 
+                                            img(src="assets/images/document-text-chat.svg").img-fluid
+                                            .d-flex.flex-column
+                                                p Document Name
+                                                .size 5.3 mb
+                                    a.chat-attachment-list(href="#")
+                                        .chat-attachment 
+                                            img(src="assets/images/document-text-chat.svg").img-fluid
+                                            .d-flex.flex-column
+                                                p Document Name
+                                                .size 5.3 mb
+                                    a.chat-attachment-list(href="#")
+                                        .chat-attachment 
+                                            img(src="assets/images/document-text-chat.svg").img-fluid
+                                            .d-flex.flex-column
+                                                p Document Name
+                                                .size 5.3 mb                              
+                
+                .chat-footer
+                    .uploaded-files#filePreview
+                    .input-wrapper
+                        label.plus-btn(for="fileInput")
+                        input(type="file" id="fileInput" multiple hidden)
+                        input.chat-input(placeholder="Type here")
+                        button.send-btn(type="submit")
+                            img(src="assets/images/footer-send-btn.svg" width="50" height="50")
+                        //- button.pause-btn(type="submit")
+                            img(src="assets/images/footer-pause-btn.svg" width="50" height="50")

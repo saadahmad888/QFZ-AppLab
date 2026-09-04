@@ -1,0 +1,124 @@
+header.header.bg-grey4
+    .container-fluid
+        .d-flex.justify-content-between 
+            img(src="assets/images/logo-black.svg").img-fluid.main-logo
+            .d-flex.gap-2.gap-lg-3.align-items-center
+                a.inline-block.pending-approvals-btn.position-relative(href="#") 
+                    span.rounded-pill.badge-pending-approvals 7
+                        span.visually-hidden unread msg
+                    span.d-inline-flex
+                        i.size-28.d-inline-block(style="background:url(assets/images/checklist-header.svg) center no-repeat")
+                button.btn.btn-white.notification-btn.py-10.position-relative(
+                    type="button",
+                    data-bs-toggle="offcanvas",
+                    data-bs-target="#notification",
+                    aria-controls="notification")
+                    span.rounded-pill.badge-notification 7
+                        span.visually-hidden unread msg
+                    span.d-inline-flex
+                        i.size-28.d-inline-block(style="background:url(assets/images/notification-bell.svg) center no-repeat")
+                .offcanvas.offcanvas-end.notification-canvas( tabindex="-1", id="notification",aria-labelledby="notificationLabel")
+                    .offcanvas-header
+                        //- h5.offcanvas-title#offcanvasExampleLabel Offcanvas
+                        button.btn-close(type="button", data-bs-dismiss="offcanvas", aria-label="Close")
+                    .offcanvas-body
+                        h1.fs-40.offcanvas-title Notification
+                        p.fs-20.text-black-light.mb-3 You have <span class="fw-900">3</span> new notifications
+                        form.d-flex(role="search").form-request.mb-3.w-100
+                            input.form-control.rounded-pill.pe-5.w-100(type="search" placeholder="Search Request ID..." aria-label="Search")
+                            span.bg-blue.search-btn.d-flex.align-items-center.justify-content-center
+                                i.search-icon.d-inline-flex(style="-webkit-mask:url('assets/images/search-icon.svg') center no-repeat;") 
+
+                        .notification-holder
+                            .notification-details.d-flex.justify-content-between.mb-32
+                                .div.d-flex.gap-3   
+                                    .read-box Unread
+                                    .unread-box Read
+                                .filter-box Filter
+                                    i.size-28.d-inline-block(style="background:url(assets/images/sort.svg) center no-repeat")
+                            .notification-list 
+                                .box-unread
+                                    h6.fs-16.fw-900.heading Leave Request Approved
+                                    p.fs-14.fw-350.reason Your leave request from Sep 20–23 was approved by<span class="fw-900 text-black-light"> Manager Ali.</span>
+                                    p.fs-14.fw-350.time  2 minutes ago
+                                    .status-approved 
+                                        i.size-28.d-inline-block(style="background:url(assets/images/tick.svg) center no-repeat")
+                                .box-unread
+                                    h6.fs-16.fw-900.heading All-Staff Meeting
+                                    p.fs-14.fw-350.reason Don’t forget: All-hands staff meeting today at 2:00 PM.
+                                    p.fs-14.fw-350.time  5 minutes ago
+                                    .status-important
+                                        i.size-28.d-inline-block(style="background:url(assets/images/important.svg) center no-repeat")
+                                .box-unread
+                                    h6.fs-16.fw-900.heading Leave Request Rejected
+                                    p.fs-14.fw-350.reason Your leave request from Sep 20–23 was <span class="fw-900 text-black-light">rejected </span> by <span class="fw-900 text-black-light">Manager Ali.</span> Reason: “Team workload high.”
+                                    p.fs-14.fw-350.time  1 hours ago
+                                    .status-rejected 
+                                        i.size-28.d-inline-block(style="background:url(assets/images/close-2.svg) center no-repeat")
+                                .box-read
+                                    h6.fs-16.fw-900.heading Task Due Tomorrow
+                                    p.fs-14.fw-350.reason Task “Prepare HR Survey Report” is due <span class="fw-900 text-black-light">tomorrow at 4 PM.</span>
+                                    p.fs-14.fw-350.time 	Today at 11:15 AM
+                                    .status-important-light
+                                        i.size-28.d-inline-block(style="background:url(assets/images/important.svg) center no-repeat")
+                                .box-read
+                                    h6.fs-16.fw-900.heading Travel Request Rejected
+                                    p.fs-14.fw-350.reason Travel request for Oct 10–15 was rejected. Reason: “Budget exceeded.”
+                                    p.fs-14.fw-350.time  Today at 09:30 AM
+                                    .status-rejected-light
+                                        i.size-28.d-inline-block(style="background:url(assets/images/close-2.svg) center no-repeat")
+                                .box-read
+                                    h6.fs-16.fw-900.heading Schooling Allowance Approved
+                                    p.fs-14.fw-350.reason Schooling allowance for Zaid Ahmed <span class="fw-900 text-black-light">Zaid Ahmed</span>has been approved.
+                                    p.fs-14.fw-350.time  Today at 07:49 AM
+                                    .status-approved-light
+                                        i.size-28.d-inline-block(style="background:url(assets/images/tick.svg) center no-repeat")
+                                .box-read
+                                    h6.fs-16.fw-900.heading Schooling Allowance Rejected
+                                    p.fs-14.fw-350.reason Claim rejected. Reason: “Missing receipt attachment.”
+                                    p.fs-14.fw-350.time  Yesterday at 06:42 PM
+                                    .status-rejected-light
+                                        i.size-28.d-inline-block(style="background:url(assets/images/close-2.svg) center no-repeat")
+                                .box-read
+                                    h6.fs-16.fw-900.heading Action Required – Attendance Correction
+                                    p.fs-14.fw-350.reason Your attendance correction request for Aug 31 is pending HR review.
+                                    p.fs-14.fw-350.time  Yesterday at 04:13 PM
+                                    .status-rejected-light
+                                        i.size-28.d-inline-block(style="background:url(assets/images/close-2.svg) center no-repeat")
+                                .box-read
+                                    h6.fs-16.fw-900.heading Action Required – Attendance Correction
+                                    p.fs-14.fw-350.reason Your attendance correction request for Aug 31 is pending HR review.
+                                    p.fs-14.fw-350.time  Yesterday at 04:13 PM
+                                    .status-rejected-light
+                                        i.size-28.d-inline-block(style="background:url(assets/images/close-2.svg) center no-repeat")
+                                .box-read
+                                    h6.fs-16.fw-900.heading Action Required – Attendance Correction
+                                    p.fs-14.fw-350.reason Your attendance correction request for Aug 31 is pending HR review.
+                                    p.fs-14.fw-350.time  Yesterday at 04:13 PM
+                                    .status-rejected-light
+                                        i.size-28.d-inline-block(style="background:url(assets/images/close-2.svg) center no-repeat")
+                      
+                button.lang-switcher.btn.btn-white.rounded-pill.p-2.p-lg-3.d-flex.gap-0.gap-lg-2.align-items-center
+                    span.d-inline-flex
+                        i.size-22x23.d-inline-block(style="background:url(assets/images/qatar-flag.svg) center no-repeat")
+                    p.d-none.d-lg-block.fw-500.fs-18.mb-0 العربية 
+                    .div.dropdown
+                button.profile-switcher.btn.btn-white.rounded-pill.p-1.d-flex.align-items-center.gap-2( type="button",data-bs-toggle="dropdown",aria-expanded="false")
+                    span.initials.size-49x48 AB
+                    //- i.d-inline-block.size-49x48(style="border-radius:50%; background:url('assets/images/man-svgrepo-com.svg') center/cover no-repeat;")
+                    span.fw-500.fs-18
+                        i.dropdown-arrow.d-inline-block.size-30x12(style="background:url('assets/images/dropdown-arrow.svg') no-repeat center; transition: transform 0.3s ease;")
+                ul.dropdown-menu.profile-dropdown
+                    li
+                        a.dropdown-item.text-black.fs-18.fw-350.py-2.d-flex.justify-content-between.align-items-center(href="#")
+
+                            span Profile
+                            i.menu-arrow(style="background:url('assets/images/logout-arrow.svg') no-repeat center; width:12px; height:12px; display:inline-block; margin-left:8px;")
+                    li
+                        a.dropdown-item.text-black.fs-18.fw-350.py-2.d-flex.justify-content-between.align-items-center(href="#")
+
+                            span Logout
+                            i.menu-arrow(style="background:url('assets/images/logout-arrow.svg') no-repeat center; width:12px; height:12px; display:inline-block; margin-left:8px;")
+
+
+                                            

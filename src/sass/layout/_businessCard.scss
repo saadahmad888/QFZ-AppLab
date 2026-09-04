@@ -1,0 +1,146 @@
+.business-card-holder {
+  height: 100%;
+
+  .card-wrapper {
+    position: relative;
+    padding: 24px;
+    background-image: url("../../assets/images/businessCard-bg.png");
+    background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: contain;
+    // background: linear-gradient(158deg,
+    //     var(--BLUE, rgba(47, 88, 165, 0.4)) 14.63%,
+    //     var(--CREAM, rgba(184, 179, 169, 0.4)) 65.97%),
+    //   $light-green;
+    background-blend-mode: luminosity, normal;
+    z-index: 1;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+
+// .logo-card {
+//   width:44%;
+// }
+// .qr-code {
+//   width:26%;
+// }
+    .phone {
+      transform: scaleX(-1);
+    }
+
+    [dir="rtl"] & {
+      .phone {
+        transform: scaleX(1);
+      }
+    }
+    .cardHolder-name{
+      .fs-8{
+        font-size: 8px;
+      }
+      &.info{
+        margin-inline-end: 8px;
+        margin-top: 12px;
+        .fs-8{
+          font-weight: 300;
+        }
+      }
+       &.info-modal{
+        margin-inline-end: 16px;
+        margin-top: 12px;
+        .fs-8{
+          font-weight: 300;
+        }
+      }
+    }
+    .blue-line{
+      position: absolute;
+      display: block;
+      width: 4px;
+      height: 77px;
+      background-color: $blue;
+      inset-inline-end: 24px;
+      bottom: 0;
+    }
+     .blue-line-modal{
+      height: 120px;
+    }
+  }
+
+  .copyLink {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .copy-icon {
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .tick-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    color: #28a745;
+    font-size: 20px;
+    z-index: 2;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .tick-icon.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* purgecss start ignore */
+/* Change tooltip background and text */
+.tooltip .tooltip-inner {
+  background-color: #333;
+  /* dark bg */
+  color: #fff;
+  /* white text */
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* Change tooltip arrow color */
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #333 !important;
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #333 !important;
+}
+
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: #333 !important;
+}
+
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: #333 !important;
+}
+
+/* purgecss end ignore */
+/* Initial state: positioned below screen */
+.modal.modal-slide-up .modal-dialog {
+  transform: translateY(100%);
+  transition: transform 0.4s ease-out;
+}
+
+/* When modal is shown */
+.modal.modal-slide-up.show .modal-dialog {
+  transform: translateY(0);
+}
